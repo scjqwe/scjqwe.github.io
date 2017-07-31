@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spring-Shiro使用及讲解Apache Shiro  What is Apache Shiro?  Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观">
+  <meta name="description" content="Spring-Shiro介绍及其使用What is Apache Shiro?Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观的API，来简化开发人员实现应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="个人博客">
 <meta property="og:url" content="http://yoursite.com/2017/07/31/spring-shiro/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Spring-Shiro使用及讲解Apache Shiro  What is Apache Shiro?  Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观">
-<meta property="og:image" content="http://yoursite.com/2017/07/public/img/ShiroFeatures.png">
-<meta property="og:image" content="http://yoursite.com/2017/07/public/img/ShiroBasicArchitecture.png">
-<meta property="og:updated_time" content="2017-07-31T17:05:38.152Z">
+<meta property="og:description" content="Spring-Shiro介绍及其使用What is Apache Shiro?Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观的API，来简化开发人员实现应">
+<meta property="og:image" content="http://yoursite.com/2017/07/31/spring-shiro/img/ShiroFeatures.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/31/spring-shiro/img/ShiroBasicArchitecture.png">
+<meta property="og:updated_time" content="2017-07-31T17:59:52.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客">
-<meta name="twitter:description" content="Spring-Shiro使用及讲解Apache Shiro  What is Apache Shiro?  Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观">
-<meta name="twitter:image" content="http://yoursite.com/2017/07/public/img/ShiroFeatures.png">
+<meta name="twitter:description" content="Spring-Shiro介绍及其使用What is Apache Shiro?Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。  Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观的API，来简化开发人员实现应">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/31/spring-shiro/img/ShiroFeatures.png">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -165,15 +165,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Spring-Shiro使用及讲解"><a href="#Spring-Shiro使用及讲解" class="headerlink" title="Spring-Shiro使用及讲解"></a>Spring-Shiro使用及讲解</h4><h2 id="apache-shiro">Apache Shiro</h2>
+        <h4 id="Spring-Shiro介绍及其使用"><a href="#Spring-Shiro介绍及其使用" class="headerlink" title="Spring-Shiro介绍及其使用"></a>Spring-Shiro介绍及其使用</h4><h5 id="What-is-Apache-Shiro"><a href="#What-is-Apache-Shiro" class="headerlink" title="What is Apache Shiro?"></a>What is Apache Shiro?</h5><p>Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。</p>
 
-<h3 id="what-is-apache-shiro">What is Apache Shiro?</h3>
-
-<p>Apache Shiro是一个功能强大、灵活的，开源的安全框架。它可以干净利落地处理身份验证、授权、企业会话管理和加密。</p>
-
-<p>Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观的API，来简化开发人员实现应用程序安全所花费的时间和精力。</p>
-
-<p>Shiro能做什么呢？</p>
+<p>Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，甚至让人感到很痛苦，但是Shiro却不是这样子的。一个好的安全框架应该屏蔽复杂性，向外暴露简单、直观的API，来简化开发人员实现应用程序安全所花费的时间和精力。</p><br><a id="more"></a><br><br><p>Shiro能做什么呢？</p>
 
 <ul><br>  <li>验证用户身份</li><br>  <li>用户访问权限控制，比如：1、判断用户是否分配了一定的安全角色。2、判断用户是否被授予完成某个操作的权限</li><br>  <li>在非 web 或 EJB 容器的环境下可以任意使用Session API</li><br>  <li>可以响应认证、访问控制，或者 Session 生命周期中发生的事件</li><br>  <li>可将一个或以上用户安全数据源数据组合成一个复合的用户 “view”(视图)</li><br>  <li>支持单点登录(SSO)功能</li><br>  <li>支持提供“Remember Me”服务，获取用户关联信息而无需登录<br><br>…</li><br></ul>
 
@@ -181,10 +175,8 @@
 
 <p>Shiro 致力在所有应用环境下实现上述功能，小到命令行应用程序，大到企业应用中，而且不需要借助第三方框架、容器、应用服务器等。当然 Shiro 的目的是尽量的融入到这样的应用环境中去，但也可以在它们之外的任何环境下开箱即用。</p>
 
-<h3 id="apache-shiro-features-特性">Apache Shiro Features 特性</h3>
-
-<p>Apache Shiro是一个全面的、蕴含丰富功能的安全框架。下图为描述Shiro功能的框架图：</p>
-<p><img src="../../public/img/ShiroFeatures.png"></p>
+<h5 id="Apache-Shiro-Features-特性"><a href="#Apache-Shiro-Features-特性" class="headerlink" title="Apache Shiro Features 特性"></a>Apache Shiro Features 特性</h5><p>Apache Shiro是一个全面的、蕴含丰富功能的安全框架。下图为描述Shiro功能的框架图：</p>
+<p><img src="img/ShiroFeatures.png"></p>
 <p>Authentication（认证）, Authorization（授权）, Session Management（会话管理）, Cryptography（加密）被 Shiro 框架的开发团队称之为应用安全的四大基石。那么就让我们来看看它们吧：</p>
 
 <ul><br>  <li><strong>Authentication（认证）：</strong>用户身份识别，通常被称为用户“登录”</li><br>  <li><strong>Authorization（授权）：</strong>访问控制。比如某个用户是否具有某个操作的使用权限。</li><br>  <li><strong>Session Management（会话管理）：</strong>特定于用户的会话管理,甚至在非web 或 EJB 应用程序。</li><br>  <li><strong>Cryptography（加密）：</strong>在对数据源使用加密算法加密的同时，保证易于使用。</li><br></ul>
@@ -196,30 +188,63 @@
 <blockquote><br>  <p>注意： Shiro不会去维护用户、维护权限，这些需要我们自己去设计/提供，然后通过相应的接口注入给Shiro</p><br></blockquote>
 
 
-<h3 id="high-level-overview-高级概述">High-Level Overview 高级概述</h3>
+<h5 id="High-Level-Overview-高级概述"><a href="#High-Level-Overview-高级概述" class="headerlink" title="High-Level Overview 高级概述"></a>High-Level Overview 高级概述</h5><p>在概念层，Shiro 架构包含三个主要的理念：Subject,SecurityManager和 Realm。下面的图展示了这些组件如何相互作用，我们将在下面依次对其进行描述。</p>
 
-<p>在概念层，Shiro 架构包含三个主要的理念：Subject,SecurityManager和 Realm。下面的图展示了这些组件如何相互作用，我们将在下面依次对其进行描述。</p>
-
-<p><img src="../../public/img/ShiroBasicArchitecture.png"></p>
+<p><img src="img/ShiroBasicArchitecture.png"></p>
 <ul><br>  <li>Subject：当前用户，Subject 可以是一个人，但也可以是第三方服务、守护进程帐户、时钟守护任务或者其它–当前和软件交互的任何事件。</li><br>  <li>SecurityManager：管理所有Subject，SecurityManager 是 Shiro 架构的核心，配合内部安全组件共同组成安全伞。</li><br>  <li>Realms：用于进行权限信息的验证，我们自己实现。Realm 本质上是一个特定的安全 DAO：它封装与数据源连接的细节，得到Shiro 所需的相关的数据。在配置 Shiro 的时候，你必须指定至少一个Realm 来实现认证（authentication）和/或授权（authorization）。</li><br></ul>
 
 <p>我们需要实现Realms的Authentication 和 Authorization。其中 Authentication 是用来验证用户身份，Authorization 是授权访问控制，用于对用户进行的操作授权，证明该用户是否允许进行当前操作，如访问某个链接，某个资源文件等。</p>
 
-<h2 id="快速上手">快速上手</h2>
+<h5 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h5><h6 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;net.sourceforge.nekohtml&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;nekohtml&lt;/artifactId&gt;</div><div class="line">			&lt;version&gt;1.9.22&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;shiro-spring&lt;/artifactId&gt;</div><div class="line">			&lt;version&gt;1.4.0&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">			&lt;scope&gt;runtime&lt;/scope&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">	&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<h6 id="Shiro-配置"><a href="#Shiro-配置" class="headerlink" title="Shiro 配置"></a>Shiro 配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">public class ShiroConfig &#123;</div><div class="line">	@Bean</div><div class="line">	public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) &#123;</div><div class="line">		System.out.println(&quot;ShiroConfiguration.shirFilter()&quot;);</div><div class="line">		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();</div><div class="line">		shiroFilterFactoryBean.setSecurityManager(securityManager);</div><div class="line">		//拦截器.</div><div class="line">		Map&lt;String,String&gt; filterChainDefinitionMap = new LinkedHashMap&lt;String,String&gt;();</div><div class="line">		// 配置不会被拦截的链接 顺序判断</div><div class="line">		filterChainDefinitionMap.put(&quot;/static/**&quot;, &quot;anon&quot;);</div><div class="line">		//配置退出 过滤器,其中的具体的退出代码Shiro已经替我们实现了</div><div class="line">		filterChainDefinitionMap.put(&quot;/logout&quot;, &quot;logout&quot;);</div><div class="line">		//&lt;!-- 过滤链定义，从上向下顺序执行，一般将/**放在最为下边 --&gt;:这是一个坑呢，一不小心代码就不好使了;</div><div class="line">		//&lt;!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问--&gt;</div><div class="line">		filterChainDefinitionMap.put(&quot;/**&quot;, &quot;authc&quot;);</div><div class="line">		// 如果不设置默认会自动寻找Web工程根目录下的&quot;/login.jsp&quot;页面</div><div class="line">		shiroFilterFactoryBean.setLoginUrl(&quot;/login&quot;);</div><div class="line">		// 登录成功后要跳转的链接</div><div class="line">		shiroFilterFactoryBean.setSuccessUrl(&quot;/index&quot;);</div><div class="line"></div><div class="line">		//未授权界面;</div><div class="line">		shiroFilterFactoryBean.setUnauthorizedUrl(&quot;/403&quot;);</div><div class="line">		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);</div><div class="line">		return shiroFilterFactoryBean;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public MyShiroRealm myShiroRealm()&#123;</div><div class="line">		MyShiroRealm myShiroRealm = new MyShiroRealm();</div><div class="line">		return myShiroRealm;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public SecurityManager securityManager()&#123;</div><div class="line">		DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();</div><div class="line">		securityManager.setRealm(myShiroRealm());</div><div class="line">		return securityManager;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="Filter-Chain定义说明："><a href="#Filter-Chain定义说明：" class="headerlink" title="Filter Chain定义说明："></a>Filter Chain定义说明：</h6><ul><br>  <li>1、一个URL可以配置多个Filter，使用逗号分隔</li><br>  <li>2、当设置多个过滤器时，全部验证通过，才视为通过</li><br>  <li>3、部分过滤器可指定参数，如perms，roles</li><br></ul>
 
-<blockquote>
-<h6 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h6></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;net.sourceforge.nekohtml&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;nekohtml&lt;/artifactId&gt;</div><div class="line">			&lt;version&gt;1.9.22&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;shiro-spring&lt;/artifactId&gt;</div><div class="line">			&lt;version&gt;1.4.0&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">			&lt;scope&gt;runtime&lt;/scope&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line">	&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<h6 id="Shiro-配置"><a href="#Shiro-配置" class="headerlink" title="Shiro 配置"></a>Shiro 配置</h6></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">public class ShiroConfig &#123;</div><div class="line">	@Bean</div><div class="line">	public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) &#123;</div><div class="line">		System.out.println(&quot;ShiroConfiguration.shirFilter()&quot;);</div><div class="line">		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();</div><div class="line">		shiroFilterFactoryBean.setSecurityManager(securityManager);</div><div class="line">		//拦截器.</div><div class="line">		Map&lt;String,String&gt; filterChainDefinitionMap = new LinkedHashMap&lt;String,String&gt;();</div><div class="line">		// 配置不会被拦截的链接 顺序判断</div><div class="line">		filterChainDefinitionMap.put(&quot;/static/**&quot;, &quot;anon&quot;);</div><div class="line">		//配置退出 过滤器,其中的具体的退出代码Shiro已经替我们实现了</div><div class="line">		filterChainDefinitionMap.put(&quot;/logout&quot;, &quot;logout&quot;);</div><div class="line">		//&lt;!-- 过滤链定义，从上向下顺序执行，一般将/**放在最为下边 --&gt;:这是一个坑呢，一不小心代码就不好使了;</div><div class="line">		//&lt;!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问--&gt;</div><div class="line">		filterChainDefinitionMap.put(&quot;/**&quot;, &quot;authc&quot;);</div><div class="line">		// 如果不设置默认会自动寻找Web工程根目录下的&quot;/login.jsp&quot;页面</div><div class="line">		shiroFilterFactoryBean.setLoginUrl(&quot;/login&quot;);</div><div class="line">		// 登录成功后要跳转的链接</div><div class="line">		shiroFilterFactoryBean.setSuccessUrl(&quot;/index&quot;);</div><div class="line"></div><div class="line">		//未授权界面;</div><div class="line">		shiroFilterFactoryBean.setUnauthorizedUrl(&quot;/403&quot;);</div><div class="line">		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);</div><div class="line">		return shiroFilterFactoryBean;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public MyShiroRealm myShiroRealm()&#123;</div><div class="line">		MyShiroRealm myShiroRealm = new MyShiroRealm();</div><div class="line">		return myShiroRealm;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	@Bean</div><div class="line">	public SecurityManager securityManager()&#123;</div><div class="line">		DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();</div><div class="line">		securityManager.setRealm(myShiroRealm());</div><div class="line">		return securityManager;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<h6 id="Filter-Chain定义说明："><a href="#Filter-Chain定义说明：" class="headerlink" title="Filter Chain定义说明："></a>Filter Chain定义说明：</h6></blockquote>
-<ul><br>  <li>1、一个URL可以配置多个Filter，使用逗号分隔</li><br>  <li>2、当设置多个过滤器时，全部验证通过，才视为通过</li><br>  <li>3、部分过滤器可指定参数，如perms，roles</li><br></ul>
-
-<p><br><br><b>Shiro内置的FilterChain:</b></p>
-<table><br>  <thead><br>    <tr><br>      <th>Filter Name</th><br>      <th>Class</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <td>anon</td><br>      <td>org.apache.shiro.web.filter.authc.AnonymousFilter</td><br>    </tr><br>    <tr><br>      <td>authc</td><br>      <td>org.apache.shiro.web.filter.authc.FormAuthenticationFilter</td><br>    </tr><br>    <tr><br>      <td>authcBasic</td><br>      <td>org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter</td><br>    </tr><br>    <tr><br>      <td>perms</td><br>      <td>org.apache.shiro.web.filter.authz.PermissionsAuthorizationFilter</td><br>    </tr><br>    <tr><br>      <td>port</td><br>      <td>org.apache.shiro.web.filter.authz.PortFilter</td><br>    </tr><br>    <tr><br>      <td>rest</td><br>      <td>org.apache.shiro.web.filter.authz.HttpMethodPermissionFilter</td><br>    </tr><br>    <tr><br>      <td>roles</td><br>      <td>org.apache.shiro.web.filter.authz.RolesAuthorizationFilter</td><br>    </tr><br>    <tr><br>      <td>ssl</td><br>      <td>org.apache.shiro.web.filter.authz.SslFilter</td><br>    </tr><br>    <tr><br>      <td>user</td><br>      <td>org.apache.shiro.web.filter.authc.UserFilter</td><br>    </tr><br>  </tbody><br></table>
-
+<h6 id="Shiro内置的FilterChain"><a href="#Shiro内置的FilterChain" class="headerlink" title="Shiro内置的FilterChain:"></a>Shiro内置的FilterChain:</h6><table>
+<thead>
+<tr>
+<th>Filter Name</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anon</td>
+<td>org.apache.shiro.web.filter.authc.AnonymousFilter</td>
+</tr>
+<tr>
+<td>authc</td>
+<td>org.apache.shiro.web.filter.authc.FormAuthenticationFilter</td>
+</tr>
+<tr>
+<td>authcBasic</td>
+<td>org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter</td>
+</tr>
+<tr>
+<td>perms</td>
+<td>org.apache.shiro.web.filter.authz.PermissionsAuthorizationFilter</td>
+</tr>
+<tr>
+<td>port</td>
+<td>org.apache.shiro.web.filter.authz.PortFilter</td>
+</tr>
+<tr>
+<td>rest</td>
+<td>org.apache.shiro.web.filter.authz.HttpMethodPermissionFilter</td>
+</tr>
+<tr>
+<td>roles</td>
+<td>org.apache.shiro.web.filter.authz.RolesAuthorizationFilter</td>
+</tr>
+<tr>
+<td>ssl</td>
+<td>org.apache.shiro.web.filter.authz.SslFilter</td>
+</tr>
+<tr>
+<td>user</td>
+<td>org.apache.shiro.web.filter.authc.UserFilter</td>
+</tr>
+</tbody>
+</table>
 <ul><br>  <li>anon:所有url都都可以匿名访问</li><br>  <li>authc: 需要认证才能进行访问</li><br>  <li>user:配置记住我或认证通过可以访问</li><br></ul>
 
 <p><strong>登录认证实现</strong></p>
