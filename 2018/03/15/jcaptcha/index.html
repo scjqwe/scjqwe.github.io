@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft YaHei:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jcaptcha," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="jcaptcha组件介绍   组件 作用     FontGenerator 设置字体随机大小范围，字体名称   BackgroundGenerator 设置背景颜色，图片大小   TextPaster 设置单词的最小最大长度，设置字的颜色，设置单词在图像中的位置是固定还是随机   ImageDeformation、ImageFilter 非必须，指定为图片变形的类，可以用变形类和过滤器两种方式">
+<meta name="keywords" content="jcaptcha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jcaptcha验证码介绍">
+<meta property="og:url" content="http://yoursite.com/2018/03/15/jcaptcha/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="jcaptcha组件介绍   组件 作用     FontGenerator 设置字体随机大小范围，字体名称   BackgroundGenerator 设置背景颜色，图片大小   TextPaster 设置单词的最小最大长度，设置字的颜色，设置单词在图像中的位置是固定还是随机   ImageDeformation、ImageFilter 非必须，指定为图片变形的类，可以用变形类和过滤器两种方式">
+<meta property="og:image" content="http://yoursite.com/images/captcha/component.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/TwistedRandomFontGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/TwistedAndShearedRandomFontGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DeformedRandomFontGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/resources/MultipleShapeBackgroundGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/GradientBackgroundGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/FunkyBackgroundGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/EllipseBackgroundGenerator.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/NonLinearTextPaster.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DoubleTextPaster.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DoubleRandomTextPaster.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/DecoratedRandomTextPaster_6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/captcha/sample.jpg">
+<meta property="og:updated_time" content="2018-03-15T15:52:35.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jcaptcha验证码介绍">
+<meta name="twitter:description" content="jcaptcha组件介绍   组件 作用     FontGenerator 设置字体随机大小范围，字体名称   BackgroundGenerator 设置背景颜色，图片大小   TextPaster 设置单词的最小最大长度，设置字的颜色，设置单词在图像中的位置是固定还是随机   ImageDeformation、ImageFilter 非必须，指定为图片变形的类，可以用变形类和过滤器两种方式">
+<meta name="twitter:image" content="http://yoursite.com/images/captcha/component.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/15/jcaptcha/"/>
+
+
+
+
+
+  <title>Jcaptcha验证码介绍 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/scjqwe"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">身体和灵魂，总有一个在路上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/jcaptcha/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kumu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jcaptcha验证码介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T23:00:00+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jcaptcha/" itemprop="url" rel="index">
+                    <span itemprop="name">jcaptcha</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,623
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="jcaptcha"><a href="#jcaptcha" class="headerlink" title="jcaptcha"></a>jcaptcha</h1><h2 id="组件介绍"><a href="#组件介绍" class="headerlink" title="组件介绍"></a>组件介绍</h2><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FontGenerator</td>
+<td>设置<strong>字体</strong>随机大小范围，字体名称</td>
+</tr>
+<tr>
+<td>BackgroundGenerator</td>
+<td>设置<strong>背景颜色</strong>，<strong>图片大小</strong></td>
+</tr>
+<tr>
+<td>TextPaster</td>
+<td>设置<strong>单词</strong>的最小最大<strong>长度</strong>，设置字的<strong>颜色</strong>，设置单词在图像中的位置是固定还是随机</td>
+</tr>
+<tr>
+<td>ImageDeformation、ImageFilter</td>
+<td>非必须，指定为图片<strong>变形</strong>的类，可以用变形类和过滤器两种方式</td>
+</tr>
+<tr>
+<td>WordToImage</td>
+<td>将FontGenerator、BackgroundGenerator、TextPaster、ImageDeformation和ImageFilter组装到一起，属于中间环节的类，类似一个容器</td>
+</tr>
+<tr>
+<td>WordGenerator</td>
+<td>设置<strong>取词的范围</strong>，设置一定范围，或从本地词库读取</td>
+</tr>
+<tr>
+<td>CaptchaFactory</td>
+<td>将配置的类，组成工程类， 也属于包装类</td>
+</tr>
+</tbody>
+</table>
+<p>结构图如下：<br><br><img src="/images/captcha/component.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="FontGenerator"><a href="#FontGenerator" class="headerlink" title="FontGenerator"></a>FontGenerator</h3><p>Font类，用于设置字体的样式和字体随机的大小范围<br><br>在com.octo.captcha.component.image.fontgenerator包中包含了几种Font类</p>
+<table>
+<thead>
+<tr>
+<th>Font</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomFontGenerator</td>
+<td>设置<strong>随机出现的字体样式</strong>和<strong>随机的字体大小范围</strong></td>
+<td>RandomFontGenerator fonts = new RandomFontGenerator (new Integer(20), new Integer(30));</td>
+<td></td>
+</tr>
+<tr>
+<td>TwistedRandomFontGenerator</td>
+<td>设置<strong>字体的随机大小范围</strong>，并对字体进行<strong>简单的扭曲变形</strong>，字体<strong>左右倾斜</strong>的效果</td>
+<td>TwistedRandomFontGenerator fonts = new TwistedRandomFontGenerator(new Integer(20), new Integer(30));</td>
+<td><img src="/images/captcha/TwistedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>TwistedAndShearedRandomFontGenerator</td>
+<td>TwistedRandomFontGenerator的子类，和 TwistedRandomFontGenerator类的构造器参数也相同，显示<strong>效果相近</strong>，采用的算法有所不同</td>
+<td></td>
+<td><img src="/images/captcha/TwistedAndShearedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DeformedRandomFontGenerator</td>
+<td>构造器的参数和上两个类相同，采用的方式也类似</td>
+<td></td>
+<td><img src="/images/captcha/DeformedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="BackgroundGenerator"><a href="#BackgroundGenerator" class="headerlink" title="BackgroundGenerator"></a>BackgroundGenerator</h3><p>Background设置背景颜色或背景图片、设置图片大小<br><br>在com.octo.captcha.component.image.backgroundgenerator包中包含了的Background类</p>
+<table>
+<thead>
+<tr>
+<th>Background</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniColorBackgroundGenerator</td>
+<td>设置<strong>图片大小</strong>和以<strong>单一颜色为背景的图片背景</strong>，可以设置一个或多个备选颜色。<br>如果想让颜色更加多变，则可以使用RandomRangeColorGenerator类，设置随机取得的RGB值，让RGB值分别的随机取得，则RGB值随机搭配的颜色将会更加多变</td>
+<td>UniColorBackgroundGenerator background = new UniColorBackgroundGenerator(new Integer(200), new Integer(100), Color.BLUE);</td>
+<td></td>
+</tr>
+<tr>
+<td>MultipleShapeBackgroundGenerator</td>
+<td>设置一种<strong>多变的背景花纹</strong></td>
+<td>MultipleShapeBackgroundGenerator background = new MultipleShapeBackgroundGenerator (200,100,Color.RED,Color.BLUE,10,10,8,8,Color.WHITE,Color.YELLOW,3);</td>
+<td><img src="/resources/MultipleShapeBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>GradientBackgroundGenerator</td>
+<td>设置一种<strong>渐变颜色的背景</strong>，也可以设置<strong>多种颜色的渐变背景</strong></td>
+<td>GradientBackgroundGenerator background =  new GradientBackgroundGenerator(200, 100, Color.BLACK, Color.WHITE);</td>
+<td><img src="/images/captcha/GradientBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>FunkyBackgroundGenerator</td>
+<td>设置<strong>四种不同颜色混杂</strong>在一起的背景。<br>如果创建过程中，给SingleColorGenerator类改为使用RandomListColorGenerator或其他类，也可以让<strong>四种颜色随机变化</strong></td>
+<td>SingleColorGenerator leftUpColor = new SingleColorGenerator(Color.RED); SingleColorGenerator leftDownColor = new SingleColorGenerator(Color.YELLOW); SingleColorGenerator rightUpColor = new SingleColorGenerator(Color.BLUE); SingleColorGenerator rightDownColor = new SingleColorGenerator(Color.GREEN); FunkyBackgroundGenerator background = new FunkyBackgroundGenerator( 200, 100, leftUpColor, leftDownColor, rightUpColor, rightDownColor, 0.5f);</td>
+<td><img src="/images/captcha/FunkyBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>FileReaderRandomBackgroundGenerator</td>
+<td>设置从<strong>指定目录读取图片作为生成图片的背景</strong>，目录中的图片，会在<strong>类构造期间就全部读取到内存</strong>中</td>
+<td>FileReaderRandomBackgroundGenerator background =  new FileReaderRandomBackgroundGenerator(200, 100, “E:¥¥testproject¥¥jcaptcha¥¥images¥¥backgrounds”);</td>
+<td></td>
+</tr>
+<tr>
+<td>EllipseBackgroundGenerator</td>
+<td>一种<strong>花样的背景</strong>，该类到目前为止没有更多的配置选项，只能设置图片大小，颜色和其他相关的值都不能设置</td>
+<td></td>
+<td><img src="/images/captcha/EllipseBackgroundGenerator.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="TextPaster"><a href="#TextPaster" class="headerlink" title="TextPaster"></a>TextPaster</h3><p>TextPaster可以设置单词的最小和最大长度和设置字的颜色（前景颜色），设置单词在图像中的位置是固定还是随机<br> 在com.octo.captcha.component.image.textpaster包中包含了的常用TextPaster类</p>
+<table>
+<thead>
+<tr>
+<th>TextPaster</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomTextPaster</td>
+<td>最常用的TextPaster，可以设置生成单词的<strong>随机长度范围</strong>，和设置<strong>一种或多种前景颜色</strong>，生成的字符串在图像中的<strong>位置是随机</strong>的</td>
+<td>RandomTextPaster textPaster = new RandomTextPaster(new Integer(5), new Integer(10),  Color.BLACK);<br><br>也可以设置多种随机前景颜色：<br>Color[] colors = new Color[]{Color.RED,Color.YELLOW,Color.BLUE}; RandomListColorGenerator randomColors = new RandomListColorGenerator(colors); RandomTextPaster textPaster =  new RandomTextPaster(new Integer(5), new Integer(10), randomColors);</td>
+<td></td>
+</tr>
+<tr>
+<td>SimpleTextPaster</td>
+<td>和RandomTextPaster用法和参数都相同，但是<strong>生成的字符串位置不变</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NonLinearTextPaster</td>
+<td>设置<strong>非直线</strong>的TextPaster，最后<strong>生成的文本成非直线的排列</strong></td>
+<td>NonLinearTextPaster textPaster =   new NonLinearTextPaster  (new Integer(5), new Integer(10), Color.BLACK);</td>
+<td><img src="/images/captcha/NonLinearTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DoubleTextPaster</td>
+<td>可以形成两行好像<strong>重影效果</strong>的文本，单词<strong>位置固定</strong></td>
+<td>DoubleTextPaster textPaster = new DoubleTextPaster(new Integer(5),new Integer(10), Color.BLACK);</td>
+<td><img src="/images/captcha/DoubleTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DoubleRandomTextPaster</td>
+<td>和DoubleTextPaster类类似的效果，但是单词在<strong>图像中出现的位置和第二行字上下位置，是随机的</strong></td>
+<td></td>
+<td><img src="/images/captcha/DoubleRandomTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DecoratedRandomTextPaster</td>
+<td>为生成的文本加上修饰，例如<strong>干扰线</strong>、<strong>干扰点</strong></td>
+<td>SingleColorGenerator lineColor = new SingleColorGenerator(Color.BLUE); TextDecorator decorator1 = new LineTextDecorator(new Integer(1), lineColor, AlphaComposite.SRC_OVER);  TextDecorator[] decorators = new TextDecorator[] { decorator1 }; SingleColorGenerator color = new SingleColorGenerator(Color.RED); DecoratedRandomTextPaster textPaster = new DecoratedRandomTextPaster(new Integer(5), new Integer(10), color, decorators);<br><br>LineTextDecorator的构造器的最后一个参数是<strong>干扰线的类型</strong>，在该参数上进行修改，也能取得不错的效果，例如将AlphaComposite.SRC_OVER改为AlphaComposite.CLEAR、AlphaComposite.SRC_IN、AlphaComposite.XOR<br><br>LineTextDecorator类是线型的装饰器，Captcha还提供了一种点状的装饰类：<br>SingleColorGenerator dColor = new SingleColorGenerator(Color.BLUE); TextDecorator decorator2 = new BaffleTextDecorator(new Integer(1),       dColor, AlphaComposite.SRC_OUT);  TextDecorator[] decorators = new TextDecorator[] { decorator2 }; SingleColorGenerator color = new SingleColorGenerator(Color.RED); DecoratedRandomTextPaster textPaster = new DecoratedRandomTextPaster(new Integer(5), new Integer(10), color, decorators);</td>
+<td><img src="/images/captcha/DecoratedRandomTextPaster.jpg" alt=""><br><br><img src="/images/captcha/DecoratedRandomTextPaster_1.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_2.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_3.jpg" alt=""><br><br><img src="/images/captcha/DecoratedRandomTextPaster_4.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_5.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_6.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Deformation和ImageFilter"><a href="#Deformation和ImageFilter" class="headerlink" title="Deformation和ImageFilter"></a>Deformation和ImageFilter</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;这两种类，都提供了对图片字体进行进一步变形的功能，Deformation类是Captcha框架中提供的变形类 和接口，ImageFilter是一个使用java提供图形图像方面服务的公司提供的通用的图形变形过滤器，可以实现的效果很多。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Deformation和ImageFilter都分为3层，一种是在<strong>文字级别</strong>的，一种是在<strong>背景级别</strong>的，还有在<strong>整个图片级别</strong>的，用于在图片生成不同的阶段对图片进行变形。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Deformation类，当前Captcha只提供了一种选择，就是PuzzleImageDeformation类，该类的效果是将 图片旋转，然后直接贴在原来图片的上面，所以效果不是很好，相信以后Captcha会提供更多的Deformation类，并且会不断完善，但是目前，不推荐使用。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;ImageFilter过滤器，有很多现有的资源可以供选择使用，是目前最好的选择。</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// font  </span></div><div class="line">RandomFontGenerator fonts = <span class="keyword">new</span> <span class="type">RandomFontGenerator</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">20</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">20</span>));  </div><div class="line"></div><div class="line"><span class="comment">// background  </span></div><div class="line">BackgroundGenerator background = <span class="keyword">new</span> <span class="type">UniColorBackgroundGenerator</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">400</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">300</span>), Color.white);  </div><div class="line"></div><div class="line"><span class="comment">// textPaster  </span></div><div class="line">RandomTextPaster textPaster =  <span class="keyword">new</span> <span class="type">RandomTextPaster</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">5</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">5</span>), Color.BLACK);  </div><div class="line"></div><div class="line"><span class="comment">// no deformation  </span></div><div class="line">ImageDeformation noneDeformation = <span class="keyword">new</span> <span class="type">ImageDeformationByFilters</span>( <span class="keyword">new</span> <span class="type">ImageFilter</span>[] &#123;&#125;);</div><div class="line"></div><div class="line"><span class="comment">// filter创建过滤器  </span></div><div class="line">ImageDeformation filters =  <span class="keyword">new</span> <span class="type">ImageDeformationByFilters</span>( <span class="keyword">new</span> <span class="type">ImageFilter</span>[] &#123; <span class="keyword">new</span> <span class="type">TwirlFilter</span>() &#125;);  DeformedComposedWordToImage cwti =   <span class="keyword">new</span> <span class="type">DeformedComposedWordToImage</span>(fonts, background, textPaster, noneDeformation, filters, noneDeformation);  </div><div class="line"></div><div class="line"><span class="comment">// 设置随机取词范围</span></div><div class="line">RandomWordGenerator words = <span class="keyword">new</span> <span class="type">RandomWordGenerator</span>(<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>);</div><div class="line">GimpyFactory gimpy = <span class="keyword">new</span> <span class="type">GimpyFactory</span>(words, cwti);  </div><div class="line">SimpleListImageCaptchaEngine engine = <span class="keyword">new</span> <span class="type">SimpleListImageCaptchaEngine</span>();</div><div class="line">engine.setFactories(<span class="keyword">new</span> <span class="type">CaptchaFactory</span>[] &#123; gimpy &#125;);  </div><div class="line">FastHashMapCaptchaStore captchaStore = <span class="keyword">new</span> <span class="type">FastHashMapCaptchaStore</span>();</div><div class="line"></div><div class="line"><span class="comment">// 创建Captcha服务  </span></div><div class="line">DefaultManageableImageCaptchaService defaultService = <span class="keyword">new</span>  <span class="type">DefaultManageableImageCaptchaService</span>(captchaStore, engine, <span class="number">180</span>, <span class="number">100000</span>, <span class="number">75000</span>);  </div><div class="line"><span class="keyword">return</span> defaultService;</div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;上述的代码，是在创建一个Captcha服务器的过程中，将过滤器加入其中，其中使用的font、background、 和testPaster类，都使用了最简单的，没有变形效果的类，意在只查看过滤器对整个图片的映像。</p>
+<p><img src="/images/captcha/sample.jpg" alt=""></p>
+<p>更多过滤器效果，可以参见<a href="http://www.jhlabs.com/ip/filters/index.html" target="_blank" rel="external">Java Image Filters</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jcaptcha/" rel="tag"><i class="fa fa-tag"></i> jcaptcha</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/15/kaptcha/" rel="next" title="Kaptcha验证码介绍">
+                <i class="fa fa-chevron-left"></i> Kaptcha验证码介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="kumu" />
+          <p class="site-author-name" itemprop="name">kumu</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/scjqwe" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="2290676174@qq.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-email"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jcaptcha"><span class="nav-number">1.</span> <span class="nav-text">jcaptcha</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件介绍"><span class="nav-number">1.1.</span> <span class="nav-text">组件介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FontGenerator"><span class="nav-number">1.2.1.</span> <span class="nav-text">FontGenerator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BackgroundGenerator"><span class="nav-number">1.2.2.</span> <span class="nav-text">BackgroundGenerator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TextPaster"><span class="nav-number">1.2.3.</span> <span class="nav-text">TextPaster</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deformation和ImageFilter"><span class="nav-number">1.2.4.</span> <span class="nav-text">Deformation和ImageFilter</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kumu</span>
+</div>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
+
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+-->
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共9.8k字</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-12T15:07:23.175Z</updated>
+  <updated>2018-03-15T15:52:35.511Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,412 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jcaptcha验证码介绍</title>
+    <link href="http://yoursite.com/2018/03/15/jcaptcha/"/>
+    <id>http://yoursite.com/2018/03/15/jcaptcha/</id>
+    <published>2018-03-15T15:00:00.000Z</published>
+    <updated>2018-03-15T15:52:35.511Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="jcaptcha"><a href="#jcaptcha" class="headerlink" title="jcaptcha"></a>jcaptcha</h1><h2 id="组件介绍"><a href="#组件介绍" class="headerlink" title="组件介绍"></a>组件介绍</h2><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FontGenerator</td>
+<td>设置<strong>字体</strong>随机大小范围，字体名称</td>
+</tr>
+<tr>
+<td>BackgroundGenerator</td>
+<td>设置<strong>背景颜色</strong>，<strong>图片大小</strong></td>
+</tr>
+<tr>
+<td>TextPaster</td>
+<td>设置<strong>单词</strong>的最小最大<strong>长度</strong>，设置字的<strong>颜色</strong>，设置单词在图像中的位置是固定还是随机</td>
+</tr>
+<tr>
+<td>ImageDeformation、ImageFilter</td>
+<td>非必须，指定为图片<strong>变形</strong>的类，可以用变形类和过滤器两种方式</td>
+</tr>
+<tr>
+<td>WordToImage</td>
+<td>将FontGenerator、BackgroundGenerator、TextPaster、ImageDeformation和ImageFilter组装到一起，属于中间环节的类，类似一个容器</td>
+</tr>
+<tr>
+<td>WordGenerator</td>
+<td>设置<strong>取词的范围</strong>，设置一定范围，或从本地词库读取</td>
+</tr>
+<tr>
+<td>CaptchaFactory</td>
+<td>将配置的类，组成工程类， 也属于包装类</td>
+</tr>
+</tbody>
+</table>
+<p>结构图如下：<br><br><img src="/images/captcha/component.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="FontGenerator"><a href="#FontGenerator" class="headerlink" title="FontGenerator"></a>FontGenerator</h3><p>Font类，用于设置字体的样式和字体随机的大小范围<br><br>在com.octo.captcha.component.image.fontgenerator包中包含了几种Font类</p>
+<table>
+<thead>
+<tr>
+<th>Font</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomFontGenerator</td>
+<td>设置<strong>随机出现的字体样式</strong>和<strong>随机的字体大小范围</strong></td>
+<td>RandomFontGenerator fonts = new RandomFontGenerator (new Integer(20), new Integer(30));</td>
+<td></td>
+</tr>
+<tr>
+<td>TwistedRandomFontGenerator</td>
+<td>设置<strong>字体的随机大小范围</strong>，并对字体进行<strong>简单的扭曲变形</strong>，字体<strong>左右倾斜</strong>的效果</td>
+<td>TwistedRandomFontGenerator fonts = new TwistedRandomFontGenerator(new Integer(20), new Integer(30));</td>
+<td><img src="/images/captcha/TwistedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>TwistedAndShearedRandomFontGenerator</td>
+<td>TwistedRandomFontGenerator的子类，和 TwistedRandomFontGenerator类的构造器参数也相同，显示<strong>效果相近</strong>，采用的算法有所不同</td>
+<td></td>
+<td><img src="/images/captcha/TwistedAndShearedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DeformedRandomFontGenerator</td>
+<td>构造器的参数和上两个类相同，采用的方式也类似</td>
+<td></td>
+<td><img src="/images/captcha/DeformedRandomFontGenerator.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="BackgroundGenerator"><a href="#BackgroundGenerator" class="headerlink" title="BackgroundGenerator"></a>BackgroundGenerator</h3><p>Background设置背景颜色或背景图片、设置图片大小<br><br>在com.octo.captcha.component.image.backgroundgenerator包中包含了的Background类</p>
+<table>
+<thead>
+<tr>
+<th>Background</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniColorBackgroundGenerator</td>
+<td>设置<strong>图片大小</strong>和以<strong>单一颜色为背景的图片背景</strong>，可以设置一个或多个备选颜色。<br>如果想让颜色更加多变，则可以使用RandomRangeColorGenerator类，设置随机取得的RGB值，让RGB值分别的随机取得，则RGB值随机搭配的颜色将会更加多变</td>
+<td>UniColorBackgroundGenerator background = new UniColorBackgroundGenerator(new Integer(200), new Integer(100), Color.BLUE);</td>
+<td></td>
+</tr>
+<tr>
+<td>MultipleShapeBackgroundGenerator</td>
+<td>设置一种<strong>多变的背景花纹</strong></td>
+<td>MultipleShapeBackgroundGenerator background = new MultipleShapeBackgroundGenerator (200,100,Color.RED,Color.BLUE,10,10,8,8,Color.WHITE,Color.YELLOW,3);</td>
+<td><img src="/resources/MultipleShapeBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>GradientBackgroundGenerator</td>
+<td>设置一种<strong>渐变颜色的背景</strong>，也可以设置<strong>多种颜色的渐变背景</strong></td>
+<td>GradientBackgroundGenerator background =  new GradientBackgroundGenerator(200, 100, Color.BLACK, Color.WHITE);</td>
+<td><img src="/images/captcha/GradientBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>FunkyBackgroundGenerator</td>
+<td>设置<strong>四种不同颜色混杂</strong>在一起的背景。<br>如果创建过程中，给SingleColorGenerator类改为使用RandomListColorGenerator或其他类，也可以让<strong>四种颜色随机变化</strong></td>
+<td>SingleColorGenerator leftUpColor = new SingleColorGenerator(Color.RED); SingleColorGenerator leftDownColor = new SingleColorGenerator(Color.YELLOW); SingleColorGenerator rightUpColor = new SingleColorGenerator(Color.BLUE); SingleColorGenerator rightDownColor = new SingleColorGenerator(Color.GREEN); FunkyBackgroundGenerator background = new FunkyBackgroundGenerator( 200, 100, leftUpColor, leftDownColor, rightUpColor, rightDownColor, 0.5f);</td>
+<td><img src="/images/captcha/FunkyBackgroundGenerator.jpg" alt=""></td>
+</tr>
+<tr>
+<td>FileReaderRandomBackgroundGenerator</td>
+<td>设置从<strong>指定目录读取图片作为生成图片的背景</strong>，目录中的图片，会在<strong>类构造期间就全部读取到内存</strong>中</td>
+<td>FileReaderRandomBackgroundGenerator background =  new FileReaderRandomBackgroundGenerator(200, 100, “E:¥¥testproject¥¥jcaptcha¥¥images¥¥backgrounds”);</td>
+<td></td>
+</tr>
+<tr>
+<td>EllipseBackgroundGenerator</td>
+<td>一种<strong>花样的背景</strong>，该类到目前为止没有更多的配置选项，只能设置图片大小，颜色和其他相关的值都不能设置</td>
+<td></td>
+<td><img src="/images/captcha/EllipseBackgroundGenerator.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="TextPaster"><a href="#TextPaster" class="headerlink" title="TextPaster"></a>TextPaster</h3><p>TextPaster可以设置单词的最小和最大长度和设置字的颜色（前景颜色），设置单词在图像中的位置是固定还是随机<br> 在com.octo.captcha.component.image.textpaster包中包含了的常用TextPaster类</p>
+<table>
+<thead>
+<tr>
+<th>TextPaster</th>
+<th>作用</th>
+<th>示例</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomTextPaster</td>
+<td>最常用的TextPaster，可以设置生成单词的<strong>随机长度范围</strong>，和设置<strong>一种或多种前景颜色</strong>，生成的字符串在图像中的<strong>位置是随机</strong>的</td>
+<td>RandomTextPaster textPaster = new RandomTextPaster(new Integer(5), new Integer(10),  Color.BLACK);<br><br>也可以设置多种随机前景颜色：<br>Color[] colors = new Color[]{Color.RED,Color.YELLOW,Color.BLUE}; RandomListColorGenerator randomColors = new RandomListColorGenerator(colors); RandomTextPaster textPaster =  new RandomTextPaster(new Integer(5), new Integer(10), randomColors);</td>
+<td></td>
+</tr>
+<tr>
+<td>SimpleTextPaster</td>
+<td>和RandomTextPaster用法和参数都相同，但是<strong>生成的字符串位置不变</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NonLinearTextPaster</td>
+<td>设置<strong>非直线</strong>的TextPaster，最后<strong>生成的文本成非直线的排列</strong></td>
+<td>NonLinearTextPaster textPaster =   new NonLinearTextPaster  (new Integer(5), new Integer(10), Color.BLACK);</td>
+<td><img src="/images/captcha/NonLinearTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DoubleTextPaster</td>
+<td>可以形成两行好像<strong>重影效果</strong>的文本，单词<strong>位置固定</strong></td>
+<td>DoubleTextPaster textPaster = new DoubleTextPaster(new Integer(5),new Integer(10), Color.BLACK);</td>
+<td><img src="/images/captcha/DoubleTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DoubleRandomTextPaster</td>
+<td>和DoubleTextPaster类类似的效果，但是单词在<strong>图像中出现的位置和第二行字上下位置，是随机的</strong></td>
+<td></td>
+<td><img src="/images/captcha/DoubleRandomTextPaster.jpg" alt=""></td>
+</tr>
+<tr>
+<td>DecoratedRandomTextPaster</td>
+<td>为生成的文本加上修饰，例如<strong>干扰线</strong>、<strong>干扰点</strong></td>
+<td>SingleColorGenerator lineColor = new SingleColorGenerator(Color.BLUE); TextDecorator decorator1 = new LineTextDecorator(new Integer(1), lineColor, AlphaComposite.SRC_OVER);  TextDecorator[] decorators = new TextDecorator[] { decorator1 }; SingleColorGenerator color = new SingleColorGenerator(Color.RED); DecoratedRandomTextPaster textPaster = new DecoratedRandomTextPaster(new Integer(5), new Integer(10), color, decorators);<br><br>LineTextDecorator的构造器的最后一个参数是<strong>干扰线的类型</strong>，在该参数上进行修改，也能取得不错的效果，例如将AlphaComposite.SRC_OVER改为AlphaComposite.CLEAR、AlphaComposite.SRC_IN、AlphaComposite.XOR<br><br>LineTextDecorator类是线型的装饰器，Captcha还提供了一种点状的装饰类：<br>SingleColorGenerator dColor = new SingleColorGenerator(Color.BLUE); TextDecorator decorator2 = new BaffleTextDecorator(new Integer(1),       dColor, AlphaComposite.SRC_OUT);  TextDecorator[] decorators = new TextDecorator[] { decorator2 }; SingleColorGenerator color = new SingleColorGenerator(Color.RED); DecoratedRandomTextPaster textPaster = new DecoratedRandomTextPaster(new Integer(5), new Integer(10), color, decorators);</td>
+<td><img src="/images/captcha/DecoratedRandomTextPaster.jpg" alt=""><br><br><img src="/images/captcha/DecoratedRandomTextPaster_1.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_2.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_3.jpg" alt=""><br><br><img src="/images/captcha/DecoratedRandomTextPaster_4.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_5.jpg" alt=""><br><img src="/images/captcha/DecoratedRandomTextPaster_6.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Deformation和ImageFilter"><a href="#Deformation和ImageFilter" class="headerlink" title="Deformation和ImageFilter"></a>Deformation和ImageFilter</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;这两种类，都提供了对图片字体进行进一步变形的功能，Deformation类是Captcha框架中提供的变形类 和接口，ImageFilter是一个使用java提供图形图像方面服务的公司提供的通用的图形变形过滤器，可以实现的效果很多。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Deformation和ImageFilter都分为3层，一种是在<strong>文字级别</strong>的，一种是在<strong>背景级别</strong>的，还有在<strong>整个图片级别</strong>的，用于在图片生成不同的阶段对图片进行变形。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Deformation类，当前Captcha只提供了一种选择，就是PuzzleImageDeformation类，该类的效果是将 图片旋转，然后直接贴在原来图片的上面，所以效果不是很好，相信以后Captcha会提供更多的Deformation类，并且会不断完善，但是目前，不推荐使用。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;ImageFilter过滤器，有很多现有的资源可以供选择使用，是目前最好的选择。</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// font  </span></div><div class="line">RandomFontGenerator fonts = <span class="keyword">new</span> <span class="type">RandomFontGenerator</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">20</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">20</span>));  </div><div class="line"></div><div class="line"><span class="comment">// background  </span></div><div class="line">BackgroundGenerator background = <span class="keyword">new</span> <span class="type">UniColorBackgroundGenerator</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">400</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">300</span>), Color.white);  </div><div class="line"></div><div class="line"><span class="comment">// textPaster  </span></div><div class="line">RandomTextPaster textPaster =  <span class="keyword">new</span> <span class="type">RandomTextPaster</span>(<span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">5</span>), <span class="keyword">new</span> <span class="type">Integer</span>(<span class="number">5</span>), Color.BLACK);  </div><div class="line"></div><div class="line"><span class="comment">// no deformation  </span></div><div class="line">ImageDeformation noneDeformation = <span class="keyword">new</span> <span class="type">ImageDeformationByFilters</span>( <span class="keyword">new</span> <span class="type">ImageFilter</span>[] &#123;&#125;);</div><div class="line"></div><div class="line"><span class="comment">// filter创建过滤器  </span></div><div class="line">ImageDeformation filters =  <span class="keyword">new</span> <span class="type">ImageDeformationByFilters</span>( <span class="keyword">new</span> <span class="type">ImageFilter</span>[] &#123; <span class="keyword">new</span> <span class="type">TwirlFilter</span>() &#125;);  DeformedComposedWordToImage cwti =   <span class="keyword">new</span> <span class="type">DeformedComposedWordToImage</span>(fonts, background, textPaster, noneDeformation, filters, noneDeformation);  </div><div class="line"></div><div class="line"><span class="comment">// 设置随机取词范围</span></div><div class="line">RandomWordGenerator words = <span class="keyword">new</span> <span class="type">RandomWordGenerator</span>(<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>);</div><div class="line">GimpyFactory gimpy = <span class="keyword">new</span> <span class="type">GimpyFactory</span>(words, cwti);  </div><div class="line">SimpleListImageCaptchaEngine engine = <span class="keyword">new</span> <span class="type">SimpleListImageCaptchaEngine</span>();</div><div class="line">engine.setFactories(<span class="keyword">new</span> <span class="type">CaptchaFactory</span>[] &#123; gimpy &#125;);  </div><div class="line">FastHashMapCaptchaStore captchaStore = <span class="keyword">new</span> <span class="type">FastHashMapCaptchaStore</span>();</div><div class="line"></div><div class="line"><span class="comment">// 创建Captcha服务  </span></div><div class="line">DefaultManageableImageCaptchaService defaultService = <span class="keyword">new</span>  <span class="type">DefaultManageableImageCaptchaService</span>(captchaStore, engine, <span class="number">180</span>, <span class="number">100000</span>, <span class="number">75000</span>);  </div><div class="line"><span class="keyword">return</span> defaultService;</div></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;上述的代码，是在创建一个Captcha服务器的过程中，将过滤器加入其中，其中使用的font、background、 和testPaster类，都使用了最简单的，没有变形效果的类，意在只查看过滤器对整个图片的映像。</p>
+<p><img src="/images/captcha/sample.jpg" alt=""></p>
+<p>更多过滤器效果，可以参见<a href="http://www.jhlabs.com/ip/filters/index.html" target="_blank" rel="external">Java Image Filters</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;jcaptcha&quot;&gt;&lt;a href=&quot;#jcaptcha&quot; class=&quot;headerlink&quot; title=&quot;jcaptcha&quot;&gt;&lt;/a&gt;jcaptcha&lt;/h1&gt;&lt;h2 id=&quot;组件介绍&quot;&gt;&lt;a href=&quot;#组件介绍&quot; class=&quot;headerlink&quot; title=&quot;组件介绍&quot;&gt;&lt;/a&gt;组件介绍&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;组件&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;FontGenerator&lt;/td&gt;
+&lt;td&gt;设置&lt;strong&gt;字体&lt;/strong&gt;随机大小范围，字体名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BackgroundGenerator&lt;/td&gt;
+&lt;td&gt;设置&lt;strong&gt;背景颜色&lt;/strong&gt;，&lt;strong&gt;图片大小&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TextPaster&lt;/td&gt;
+&lt;td&gt;设置&lt;strong&gt;单词&lt;/strong&gt;的最小最大&lt;strong&gt;长度&lt;/strong&gt;，设置字的&lt;strong&gt;颜色&lt;/strong&gt;，设置单词在图像中的位置是固定还是随机&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ImageDeformation、ImageFilter&lt;/td&gt;
+&lt;td&gt;非必须，指定为图片&lt;strong&gt;变形&lt;/strong&gt;的类，可以用变形类和过滤器两种方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WordToImage&lt;/td&gt;
+&lt;td&gt;将FontGenerator、BackgroundGenerator、TextPaster、ImageDeformation和ImageFilter组装到一起，属于中间环节的类，类似一个容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WordGenerator&lt;/td&gt;
+&lt;td&gt;设置&lt;strong&gt;取词的范围&lt;/strong&gt;，设置一定范围，或从本地词库读取&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CaptchaFactory&lt;/td&gt;
+&lt;td&gt;将配置的类，组成工程类， 也属于包装类&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;结构图如下：&lt;br&gt;&lt;br&gt;&lt;img src=&quot;/images/captcha/component.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="jcaptcha" scheme="http://yoursite.com/categories/jcaptcha/"/>
+    
+    
+      <category term="jcaptcha" scheme="http://yoursite.com/tags/jcaptcha/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kaptcha验证码介绍</title>
+    <link href="http://yoursite.com/2018/03/15/kaptcha/"/>
+    <id>http://yoursite.com/2018/03/15/kaptcha/</id>
+    <published>2018-03-15T15:00:00.000Z</published>
+    <updated>2018-03-15T15:20:15.710Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="kaptcha"><a href="#kaptcha" class="headerlink" title="kaptcha"></a>kaptcha</h2><h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>描述</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kaptcha.border</td>
+<td>图片边框</td>
+<td>yes,no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>kaptcha.border.color</td>
+<td>边框颜色</td>
+<td>r,g,b(and optional alpha) 或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.border.thickness</td>
+<td>边框厚度</td>
+<td>&gt;0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>kaptcha.image.width</td>
+<td>图片宽</td>
+<td>&gt;0</td>
+<td>200</td>
+</tr>
+<tr>
+<td>kaptcha.image.height</td>
+<td>图片高</td>
+<td>&gt;0</td>
+<td>50</td>
+</tr>
+<tr>
+<td>kaptcha.producer.impl</td>
+<td>图片实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultKaptcha</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.impl</td>
+<td>文本实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.text.impl.DefaultTextCreator</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.string</td>
+<td>文本集合</td>
+<td></td>
+<td>abcde2345678gfynmnpwx</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.length</td>
+<td>验证码长度</td>
+<td></td>
+<td>5</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.names</td>
+<td>字体</td>
+<td></td>
+<td>Arial, Courier</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.size</td>
+<td>字体大小</td>
+<td></td>
+<td>40px</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.color</td>
+<td>字体颜色</td>
+<td>r,g,b  或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.space</td>
+<td>文字间隔</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>kaptcha.noise.impl</td>
+<td>干扰实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultNoise</td>
+</tr>
+<tr>
+<td>kaptcha.noise.color</td>
+<td>干扰颜色</td>
+<td>r,g,b 或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.obscurificator.impl</td>
+<td>图片样式</td>
+<td>水纹com.google.code.kaptcha.impl.WaterRipple<br>鱼眼com.google.code.kaptcha.impl.FishEyeGimpy<br>阴影com.google.code.kaptcha.impl.ShadowGimpy</td>
+<td>com.google.code.kaptcha.impl.WaterRipple</td>
+</tr>
+<tr>
+<td>kaptcha.background.impl</td>
+<td>背景实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultBackground</td>
+</tr>
+<tr>
+<td>kaptcha.background.clear.from</td>
+<td>背景颜色渐变，开始颜色</td>
+<td></td>
+<td>lightGray</td>
+</tr>
+<tr>
+<td>kaptcha.background.clear.to</td>
+<td>背景颜色渐变，结束颜色</td>
+<td></td>
+<td>white</td>
+</tr>
+<tr>
+<td>kaptcha.word.impl</td>
+<td>文字渲染器</td>
+<td></td>
+<td>com.google.code.kaptcha.text.impl.DefaultWordRenderer</td>
+</tr>
+<tr>
+<td>kaptcha.session.key</td>
+<td>session key</td>
+<td></td>
+<td>KAPTCHA_SESSION_KEY</td>
+</tr>
+<tr>
+<td>kaptcha.session.date</td>
+<td>session date</td>
+<td></td>
+<td>KAPTCHA_SESSION_DATE</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;kaptcha&quot;&gt;&lt;a href=&quot;#kaptcha&quot; class=&quot;headerlink&quot; title=&quot;kaptcha&quot;&gt;&lt;/a&gt;kaptcha&lt;/h2&gt;&lt;h3 id=&quot;配置项&quot;&gt;&lt;a href=&quot;#配置项&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="kaptcha" scheme="http://yoursite.com/categories/kaptcha/"/>
+    
+    
+      <category term="kaptcha" scheme="http://yoursite.com/tags/kaptcha/"/>
+    
+  </entry>
   
   <entry>
     <title>Kafka知识探索</title>
