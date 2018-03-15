@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-15T16:17:43.957Z</updated>
+  <updated>2018-03-15T16:19:42.150Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2018/03/15/redis-introduction/"/>
     <id>http://yoursite.com/2018/03/15/redis-introduction/</id>
     <published>2018-03-15T15:05:00.000Z</published>
-    <updated>2018-03-15T16:17:43.957Z</updated>
+    <updated>2018-03-15T16:19:42.150Z</updated>
     
     <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。<br>Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。<br><br>它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。</p>
+<a id="more"></a>
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h5 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h5><p>string是redis最基本的类型，你可以理解成与Memcached一模一样的类型，一个key对应一个value。<br><br>string类型是二进制安全的。意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象 。<br><br>string类型是Redis最基本的数据类型，一个键最大能存储512MB。<br></p>
 <h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SET</span> <span class="selector-tag">name</span> "<span class="selector-tag">runoob</span>"</div><div class="line"><span class="selector-tag">OK</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">GET</span> <span class="selector-tag">name</span></div><div class="line">"<span class="selector-tag">runoob</span>"</div></pre></td></tr></table></figure>
 <p>在以上实例中我们使用了 Redis 的 <strong>SET</strong> 和 <strong>GET</strong> 命令。键为 name，对应的值为 runoob。<br><br><strong>注意</strong>：一个键最大能存储<strong>512MB</strong>。</p>
@@ -45,7 +46,7 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系
+      &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。&lt;br&gt;Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。&lt;br&gt;&lt;br&gt;它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。&lt;/p&gt;
     
     </summary>
     
