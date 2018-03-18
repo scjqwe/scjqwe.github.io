@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-15T16:19:42.150Z</updated>
+  <updated>2018-03-18T13:09:42.929Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Redis入门</title>
-    <link href="http://yoursite.com/2018/03/15/redis-introduction/"/>
-    <id>http://yoursite.com/2018/03/15/redis-introduction/</id>
+    <link href="http://yoursite.com/2018/03/15/redis/redis-introduction/"/>
+    <id>http://yoursite.com/2018/03/15/redis/redis-introduction/</id>
     <published>2018-03-15T15:05:00.000Z</published>
-    <updated>2018-03-15T16:19:42.150Z</updated>
+    <updated>2018-03-18T13:09:42.929Z</updated>
     
     <content type="html"><![CDATA[<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。<br>Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。<br><br>它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。</p>
 <a id="more"></a>
@@ -59,10 +59,10 @@
   
   <entry>
     <title>Redis高级知识</title>
-    <link href="http://yoursite.com/2018/03/15/redis/"/>
-    <id>http://yoursite.com/2018/03/15/redis/</id>
+    <link href="http://yoursite.com/2018/03/15/redis/redis/"/>
+    <id>http://yoursite.com/2018/03/15/redis/redis/</id>
     <published>2018-03-15T15:05:00.000Z</published>
-    <updated>2018-03-18T12:58:16.276Z</updated>
+    <updated>2018-03-18T13:09:42.932Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h4><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。<br><br>Redis 客户端可以订阅任意数量的频道。<br><br>下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png" alt=""><br>当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png" alt=""></p>
 <h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><p>以下实例演示了发布订阅是如何工作的。在我们实例中我们创建了订阅频道名为 redisChat:<br></p>
@@ -236,10 +236,10 @@
   
   <entry>
     <title>Jcaptcha验证码介绍</title>
-    <link href="http://yoursite.com/2018/03/15/jcaptcha/"/>
-    <id>http://yoursite.com/2018/03/15/jcaptcha/</id>
+    <link href="http://yoursite.com/2018/03/15/captcha/jcaptcha/"/>
+    <id>http://yoursite.com/2018/03/15/captcha/jcaptcha/</id>
     <published>2018-03-15T15:00:00.000Z</published>
-    <updated>2018-03-18T10:31:08.478Z</updated>
+    <updated>2018-03-18T13:09:20.879Z</updated>
     
     <content type="html"><![CDATA[<h1 id="jcaptcha"><a href="#jcaptcha" class="headerlink" title="jcaptcha"></a>jcaptcha</h1><h2 id="组件介绍"><a href="#组件介绍" class="headerlink" title="组件介绍"></a>组件介绍</h2><table>
 <thead>
@@ -476,10 +476,10 @@
   
   <entry>
     <title>Kaptcha验证码介绍</title>
-    <link href="http://yoursite.com/2018/03/15/kaptcha/"/>
-    <id>http://yoursite.com/2018/03/15/kaptcha/</id>
+    <link href="http://yoursite.com/2018/03/15/captcha/kaptcha/"/>
+    <id>http://yoursite.com/2018/03/15/captcha/kaptcha/</id>
     <published>2018-03-15T15:00:00.000Z</published>
-    <updated>2018-03-15T15:20:15.710Z</updated>
+    <updated>2018-03-18T13:09:15.437Z</updated>
     
     <content type="html"><![CDATA[<h2 id="kaptcha"><a href="#kaptcha" class="headerlink" title="kaptcha"></a>kaptcha</h2><h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><table>
 <thead>
@@ -797,8 +797,8 @@ kibana：5.5.1
   
   <entry>
     <title>Spring-Shiro介绍及其使用</title>
-    <link href="http://yoursite.com/2017/08/01/spring-shiro/"/>
-    <id>http://yoursite.com/2017/08/01/spring-shiro/</id>
+    <link href="http://yoursite.com/2017/08/01/spring/spring-shiro/"/>
+    <id>http://yoursite.com/2017/08/01/spring/spring-shiro/</id>
     <published>2017-08-01T03:17:11.000Z</published>
     <updated>2017-08-07T16:46:29.570Z</updated>
     
@@ -959,8 +959,8 @@ kibana：5.5.1
   
   <entry>
     <title>Spring-cloud入门介绍</title>
-    <link href="http://yoursite.com/2017/07/22/spring-introduction/"/>
-    <id>http://yoursite.com/2017/07/22/spring-introduction/</id>
+    <link href="http://yoursite.com/2017/07/22/spring/spring-boot/spring-introduction/"/>
+    <id>http://yoursite.com/2017/07/22/spring/spring-boot/spring-introduction/</id>
     <published>2017-07-22T10:52:56.000Z</published>
     <updated>2017-08-07T15:53:31.568Z</updated>
     
@@ -991,7 +991,7 @@ kibana：5.5.1
     <link href="http://yoursite.com/2017/07/16/My-first-post/"/>
     <id>http://yoursite.com/2017/07/16/My-first-post/</id>
     <published>2017-07-16T03:17:11.000Z</published>
-    <updated>2017-08-07T15:53:35.496Z</updated>
+    <updated>2018-03-15T16:19:49.226Z</updated>
     
     <content type="html"><![CDATA[<h3 id="为什么我要开始要写博客"><a href="#为什么我要开始要写博客" class="headerlink" title="为什么我要开始要写博客"></a>为什么我要开始要写博客</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;从15年11月份以来，这一年多在企业工作的日子里，我收获许多。作为一个渴望学技术的程序员，我慢慢摆脱了学校的那种安逸的生活，开始走上了技术宅的道路。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;在企业中，前几个月的时间里，我每天都像是海绵一样吸收着养分，学习企业的架构，项目的开发，部署，优化以及维护工作。我每天都痛苦并快乐着，虽然加班，但是我能感觉到自己一点一点的在往上爬。我学会SpringMVC架构，学会使用Maven构建项目，用Ant来实现自动部署项目，用Groovy脚本来编写告警任务。学会了很多软件，诸如MongoDB，Redis等常用开发软件。这个过程中，我很快乐，并且每天都在进步。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;但是到了17年的3,4月份，我熟悉了团队的各种业务，也明白了项目中所用到的框架和各种技术。我每天做的除了日常的开发和维护，似乎陷入了重复造轮子的困境。虽然在这过程中，我学会了怎样去考虑到新业务或新场景的设计流程和后续的维护过程，但是我始终感觉到了自己的进步慢慢的缓下了，这是我不希望看到的，我渴望进步和成功。</p>

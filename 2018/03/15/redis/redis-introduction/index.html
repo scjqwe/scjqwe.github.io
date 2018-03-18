@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="spring,spring-cloud," />
+  <meta name="keywords" content="redis," />
 
 
 
@@ -114,17 +114,17 @@
 
 
 
-<meta name="description" content="Spring-cloud入门介绍Spring Cloud官网 Spring Cloud中文网 一、Spring Cloud Netflix二、服务提供与调用">
-<meta name="keywords" content="spring,spring-cloud">
+<meta name="description" content="介绍Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map),">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring-cloud入门介绍">
-<meta property="og:url" content="http://yoursite.com/2017/07/22/spring-introduction/index.html">
+<meta property="og:title" content="Redis入门">
+<meta property="og:url" content="http://yoursite.com/2018/03/15/redis/redis-introduction/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Spring-cloud入门介绍Spring Cloud官网 Spring Cloud中文网 一、Spring Cloud Netflix二、服务提供与调用">
-<meta property="og:updated_time" content="2017-08-07T15:53:31.568Z">
+<meta property="og:description" content="介绍Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map),">
+<meta property="og:updated_time" content="2018-03-18T13:09:42.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring-cloud入门介绍">
-<meta name="twitter:description" content="Spring-cloud入门介绍Spring Cloud官网 Spring Cloud中文网 一、Spring Cloud Netflix二、服务提供与调用">
+<meta name="twitter:title" content="Redis入门">
+<meta name="twitter:description" content="介绍Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map),">
 
 
 
@@ -153,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/22/spring-introduction/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/15/redis/redis-introduction/"/>
 
 
 
 
 
-  <title>Spring-cloud入门介绍 | 个人博客</title>
+  <title>Redis入门 | 个人博客</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/spring-introduction/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/redis/redis-introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kumu">
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring-cloud入门介绍</h1>
+          <h1 class="post-title" itemprop="name headline">Redis入门</h1>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T18:52:56+08:00">
-                2017-07-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T23:05:00+08:00">
+                2018-03-15
               </time>
             
 
@@ -379,8 +379,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/spring-cloud/" itemprop="url" rel="index">
-                    <span itemprop="name">spring-cloud</span>
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
                   </a>
                 </span>
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  48
+                  905
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -447,10 +447,27 @@
       
 
       
-        <h3 id="Spring-cloud入门介绍"><a href="#Spring-cloud入门介绍" class="headerlink" title="Spring-cloud入门介绍"></a>Spring-cloud入门介绍</h3><p><a href="https://projects.spring.io/spring-cloud/" target="_blank" rel="external">Spring Cloud官网</a></p>
-<p><a href="https://springcloud.cc/" target="_blank" rel="external">Spring Cloud中文网</a></p>
-<h4 id="一、Spring-Cloud-Netflix"><a href="#一、Spring-Cloud-Netflix" class="headerlink" title="一、Spring Cloud Netflix"></a>一、Spring Cloud Netflix</h4><h4 id="二、服务提供与调用"><a href="#二、服务提供与调用" class="headerlink" title="二、服务提供与调用"></a>二、服务提供与调用</h4><a id="more"></a>
-<h4 id="三、熔断器Hystrix"><a href="#三、熔断器Hystrix" class="headerlink" title="三、熔断器Hystrix"></a>三、熔断器Hystrix</h4><h4 id="四、熔断监控Hystrix-Dashboard和Turbine"><a href="#四、熔断监控Hystrix-Dashboard和Turbine" class="headerlink" title="四、熔断监控Hystrix Dashboard和Turbine"></a>四、熔断监控Hystrix Dashboard和Turbine</h4><h4 id="五、配置中心git示例"><a href="#五、配置中心git示例" class="headerlink" title="五、配置中心git示例"></a>五、配置中心git示例</h4>
+        <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Remote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。<br>Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。<br><br>它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Map), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。</p>
+<a id="more"></a>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h5 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h5><p>string是redis最基本的类型，你可以理解成与Memcached一模一样的类型，一个key对应一个value。<br><br>string类型是二进制安全的。意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象 。<br><br>string类型是Redis最基本的数据类型，一个键最大能存储512MB。<br></p>
+<h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SET</span> <span class="selector-tag">name</span> "<span class="selector-tag">runoob</span>"</div><div class="line"><span class="selector-tag">OK</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">GET</span> <span class="selector-tag">name</span></div><div class="line">"<span class="selector-tag">runoob</span>"</div></pre></td></tr></table></figure>
+<p>在以上实例中我们使用了 Redis 的 <strong>SET</strong> 和 <strong>GET</strong> 命令。键为 name，对应的值为 runoob。<br><br><strong>注意</strong>：一个键最大能存储<strong>512MB</strong>。</p>
+<h5 id="Hash（哈希）"><a href="#Hash（哈希）" class="headerlink" title="Hash（哈希）"></a>Hash（哈希）</h5><p>Redis hash 是一个键值(key=&gt;value)对集合。<br><br>Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。</p>
+<h6 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">redis&gt;</span><span class="bash"> HMSET myhash field1 <span class="string">"Hello"</span> field2 <span class="string">"World"</span></span></div><div class="line">"OK"</div><div class="line"><span class="meta">redis&gt;</span><span class="bash"> HGET myhash field1</span></div><div class="line">"Hello"</div><div class="line"><span class="meta">redis&gt;</span><span class="bash"> HGET myhash field2</span></div><div class="line">"World"</div></pre></td></tr></table></figure>
+<p>以上实例中 hash 数据类型存储了包含用户脚本信息的用户对象。 实例中我们使用了 Redis <strong>HMSET</strong>, <strong>HGETALL</strong> 命令，user:1 为键值。<br><br>每个 hash 可以存储 <strong>2^32 -1 键值对</strong>（<strong>40多亿</strong>）。</p>
+<h5 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a>List（列表）</h5><p>Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。</p>
+<h6 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lpush</span> <span class="selector-tag">runoob</span> <span class="selector-tag">redis</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lpush</span> <span class="selector-tag">runoob</span> <span class="selector-tag">mongodb</span></div><div class="line">(<span class="selector-tag">integer</span>) 2</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lpush</span> <span class="selector-tag">runoob</span> <span class="selector-tag">rabitmq</span></div><div class="line">(<span class="selector-tag">integer</span>) 3</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lrange</span> <span class="selector-tag">runoob</span> 0 10</div><div class="line">1) "<span class="selector-tag">rabitmq</span>"</div><div class="line">2) "<span class="selector-tag">mongodb</span>"</div><div class="line">3) "<span class="selector-tag">redis</span>"</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt;</div></pre></td></tr></table></figure>
+<p>列表最多可存储 <strong>2^32 - 1</strong> 元素 (4294967295, <strong>每个列表可存储40多亿</strong>)。</p>
+<h5 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a>Set（集合）</h5><p>Redis的Set是string类型的无序集合。<br><br>集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+<h6 id="sadd-命令"><a href="#sadd-命令" class="headerlink" title="sadd 命令"></a>sadd 命令</h6><p>添加一个string元素到,key对应的set集合中，成功返回1,如果元素已经在集合中返回0,key对应的set不存在返回错误。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sadd <span class="built_in">key</span> <span class="built_in">member</span></div></pre></td></tr></table></figure>
+<h6 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">runoob</span> <span class="selector-tag">redis</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">runoob</span> <span class="selector-tag">mongodb</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">runoob</span> <span class="selector-tag">rabitmq</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">runoob</span> <span class="selector-tag">rabitmq</span></div><div class="line">(<span class="selector-tag">integer</span>) 0</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">smembers</span> <span class="selector-tag">runoob</span></div><div class="line"></div><div class="line">1) "<span class="selector-tag">rabitmq</span>"</div><div class="line">2) "<span class="selector-tag">mongodb</span>"</div><div class="line">3) "<span class="selector-tag">redis</span>"</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>：以上实例中 rabitmq 添加了两次，但根据<strong>集合内元素的唯一性</strong>，第二次插入的元素将被忽略。<br><br>集合中最大的成员数为 <strong>2^32 - 1</strong>(4294967295, <strong>每个集合可存储40多亿个成员</strong>)。</p>
+<h5 id="zset-sorted-set：有序集合"><a href="#zset-sorted-set：有序集合" class="headerlink" title="zset(sorted set：有序集合)"></a>zset(sorted set：有序集合)</h5><p>Redis zset 和 set 一样也是string类型元素的集合,且不允许重复的成员。<br><br>不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。<br><br>zset的成员是唯一的,但分数(score)却可以重复。</p>
+<h6 id="zadd-命令"><a href="#zadd-命令" class="headerlink" title="zadd 命令"></a>zadd 命令</h6><p>添加元素到集合，元素在集合中存在则更新对应score</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zadd <span class="built_in">key</span> score <span class="built_in">member</span></div></pre></td></tr></table></figure>
+<h6 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">runoob</span> 0 <span class="selector-tag">redis</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">runoob</span> 0 <span class="selector-tag">mongodb</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">runoob</span> 0 <span class="selector-tag">rabitmq</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">runoob</span> 0 <span class="selector-tag">rabitmq</span></div><div class="line">(<span class="selector-tag">integer</span>) 0</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; &gt; <span class="selector-tag">ZRANGEBYSCORE</span> <span class="selector-tag">runoob</span> 0 1000</div><div class="line">1) "<span class="selector-tag">mongodb</span>"</div><div class="line">2) "<span class="selector-tag">rabitmq</span>"</div><div class="line">3) "<span class="selector-tag">redis</span>"</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -478,9 +495,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
-          
-            <a href="/tags/spring-cloud/" rel="tag"><i class="fa fa-tag"></i> spring-cloud</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
           
         </div>
       
@@ -493,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/16/My-first-post/" rel="next" title="第一篇博客">
-                <i class="fa fa-chevron-left"></i> 第一篇博客
+              <a href="/2018/03/15/redis/redis/" rel="next" title="Redis高级知识">
+                <i class="fa fa-chevron-left"></i> Redis高级知识
               </a>
             
           </div>
@@ -502,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/thread-local/" rel="prev" title="ThreadLocal">
-                ThreadLocal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -670,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-cloud入门介绍"><span class="nav-number">1.</span> <span class="nav-text">Spring-cloud入门介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、Spring-Cloud-Netflix"><span class="nav-number">1.1.</span> <span class="nav-text">一、Spring Cloud Netflix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、服务提供与调用"><span class="nav-number">1.2.</span> <span class="nav-text">二、服务提供与调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、熔断器Hystrix"><span class="nav-number">1.3.</span> <span class="nav-text">三、熔断器Hystrix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、熔断监控Hystrix-Dashboard和Turbine"><span class="nav-number">1.4.</span> <span class="nav-text">四、熔断监控Hystrix Dashboard和Turbine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、配置中心git示例"><span class="nav-number">1.5.</span> <span class="nav-text">五、配置中心git示例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String（字符串）"><span class="nav-number">2.1.</span> <span class="nav-text">String（字符串）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#实例"><span class="nav-number">2.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hash（哈希）"><span class="nav-number">2.2.</span> <span class="nav-text">Hash（哈希）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#实例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#List（列表）"><span class="nav-number">2.3.</span> <span class="nav-text">List（列表）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#实例-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Set（集合）"><span class="nav-number">2.4.</span> <span class="nav-text">Set（集合）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sadd-命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">sadd 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实例-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#zset-sorted-set：有序集合"><span class="nav-number">2.5.</span> <span class="nav-text">zset(sorted set：有序集合)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#zadd-命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">zadd 命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实例-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
