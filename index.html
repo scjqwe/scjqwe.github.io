@@ -628,161 +628,16 @@
 
       
         
-          
-            <h4 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h4><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。<br><br>Redis 客户端可以订阅任意数量的频道。<br><br>下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png" alt=""><br>当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png" alt=""></p>
+          <h4 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h4><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。<br><br>Redis 客户端可以订阅任意数量的频道。<br><br>下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png" alt=""><br>当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png" alt=""></p>
 <h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><p>以下实例演示了发布订阅是如何工作的。在我们实例中我们创建了订阅频道名为 redisChat:<br></p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; SUBSCRIBE redisChat</div><div class="line"></div><div class="line"><span class="function"><span class="title">Reading</span></span> messages... (press Ctrl-C to quit)</div><div class="line"><span class="number">1</span>) <span class="string">"subscribe"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) (<span class="keyword">integer</span>) <span class="number">1</span></div></pre></td></tr></table></figure>
-<p>现在，我们先重新开启个 redis 客户端，然后在同一个频道 redisChat 发布两次消息，订阅者就能接收到消息。<br></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">redis</span> <span class="number">127.0.0.1:6379</span>&gt; publish redisChat <span class="string">"Redis is a great caching technique"</span></div><div class="line"></div><div class="line">(integer) <span class="number">1</span></div><div class="line"></div><div class="line">redis <span class="number">127.0.0.1:6379</span>&gt; publish redisChat <span class="string">"Learn redis by runoob.com"</span></div><div class="line"></div><div class="line">(integer) <span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># 订阅者的客户端会显示如下消息</span></div><div class="line"><span class="number">1</span>) <span class="string">"message"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) <span class="string">"Redis is a great caching technique"</span></div><div class="line"><span class="number">1</span>) <span class="string">"message"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) <span class="string">"Learn redis by runoob.com"</span></div></pre></td></tr></table></figure>
-<h6 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h6><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PSUBSCRIBE pattern [pattern …]</td>
-<td>订阅一个或多个符合给定模式的频道</td>
-</tr>
-<tr>
-<td>PUBSUB subcommand [argument [argument …]]</td>
-<td>查看订阅与发布系统状态</td>
-</tr>
-<tr>
-<td>PUBLISH channel message</td>
-<td>将信息发送到指定的频道</td>
-</tr>
-<tr>
-<td>PUNSUBSCRIBE [pattern [pattern …]]</td>
-<td>退订所有给定模式的频道</td>
-</tr>
-<tr>
-<td>SUBSCRIBE channel [channel …]</td>
-<td>订阅给定的一个或多个频道的信息</td>
-</tr>
-<tr>
-<td>UNSUBSCRIBE [channel [channel …]]</td>
-<td>指退订给定的频道</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><p>Redis 事务可以一次执行多个命令， 并且带有以下两个重要的保证：<br></p>
-<li>批量操作在发送 EXEC 命令前被放入队列缓存。</li><br><li>收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余的命令依然被执行。</li><br><li>在事务执行过程，其他客户端提交的命令请求不会插入到事务执行命令序列中。</li>
-
-<h6 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h6><p>以下是一个事务的例子， 它先以 MULTI 开始一个事务， 然后将多个命令入队到事务中， 最后由 EXEC 命令触发事务， 一并执行事务中的所有命令：<br></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">MULTI</span></div><div class="line"><span class="selector-tag">OK</span></div><div class="line"></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SET</span> <span class="selector-tag">book-name</span> "<span class="selector-tag">Mastering</span> <span class="selector-tag">C</span>++ <span class="selector-tag">in</span> 21 <span class="selector-tag">days</span>"</div><div class="line"><span class="selector-tag">QUEUED</span></div><div class="line"></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">GET</span> <span class="selector-tag">book-name</span></div><div class="line"><span class="selector-tag">QUEUED</span></div><div class="line"></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SADD</span> <span class="selector-tag">tag</span> "<span class="selector-tag">C</span>++" "<span class="selector-tag">Programming</span>" "<span class="selector-tag">Mastering</span> <span class="selector-tag">Series</span>"</div><div class="line"><span class="selector-tag">QUEUED</span></div><div class="line"></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SMEMBERS</span> <span class="selector-tag">tag</span></div><div class="line"><span class="selector-tag">QUEUED</span></div><div class="line"></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">EXEC</span></div><div class="line">1) <span class="selector-tag">OK</span></div><div class="line">2) "<span class="selector-tag">Mastering</span> <span class="selector-tag">C</span>++ <span class="selector-tag">in</span> 21 <span class="selector-tag">days</span>"</div><div class="line">3) (<span class="selector-tag">integer</span>) 3</div><div class="line">4) 1) "<span class="selector-tag">Mastering</span> <span class="selector-tag">Series</span>"</div><div class="line">   2) "<span class="selector-tag">C</span>++"</div><div class="line">   3) "<span class="selector-tag">Programming</span>"</div></pre></td></tr></table></figure>
-<p>单个 Redis 命令的执行是原子性的，但 Redis 没有在事务上增加任何维持原子性的机制，所以 Redis 事务的执行并不是原子性的。<br><br>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。<br></p>
-<h6 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h6><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DISCARD</td>
-<td>取消事务，放弃执行事务块内的所有命令</td>
-</tr>
-<tr>
-<td>EXEC</td>
-<td>执行所有事务块内的命令</td>
-</tr>
-<tr>
-<td>MULTI</td>
-<td>标记一个事务块的开始</td>
-</tr>
-<tr>
-<td>UNWATCH</td>
-<td>取消 WATCH 命令对所有 key 的监视</td>
-</tr>
-<tr>
-<td>WATCH key [key …]</td>
-<td>监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断</td>
-</tr>
-</tbody>
-</table>
-<li>Redis 在事务失败时不进行回滚，而是继续执行余下的命令</li><br><li>WATCH 命令可以为 Redis 事务提供 check-and-set （CAS）行为</li>
-
-<blockquote>
-<p>具体内容参见<a href="http://www.redis.cn/topics/transactions.html" target="_blank" rel="external">事物-官网文档</a></p>
-</blockquote>
-<h4 id="Redis-脚本"><a href="#Redis-脚本" class="headerlink" title="Redis 脚本"></a>Redis 脚本</h4><p>Redis 脚本使用 Lua 解释器来执行脚本。 Reids 2.6 版本通过内嵌支持 Lua 环境。执行脚本的常用命令为 EVAL。<br></p>
-<h6 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h6><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; EVAL <span class="string">"return &#123;KEYS[1],KEYS[2],ARGV[1],ARGV[2]&#125;"</span> <span class="number">2</span> key1 key2 <span class="keyword">first</span> <span class="keyword">second</span></div><div class="line"></div><div class="line"><span class="number">1</span>) <span class="string">"key1"</span></div><div class="line"><span class="number">2</span>) <span class="string">"key2"</span></div><div class="line"><span class="number">3</span>) <span class="string">"first"</span></div><div class="line"><span class="number">4</span>) <span class="string">"second"</span></div></pre></td></tr></table></figure>
-<h6 id="命令-2"><a href="#命令-2" class="headerlink" title="命令"></a>命令</h6><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EVAL script numkeys key [key …] arg [arg …]</td>
-<td>执行 Lua 脚本</td>
-</tr>
-<tr>
-<td>EVALSHA sha1 numkeys key [key …] arg [arg …]</td>
-<td>执行 Lua 脚本</td>
-</tr>
-<tr>
-<td>SCRIPT EXISTS script [script …]</td>
-<td>查看指定的脚本是否已经被保存在缓存当中</td>
-</tr>
-<tr>
-<td>SCRIPT FLUSH</td>
-<td>从脚本缓存中移除所有脚本</td>
-</tr>
-<tr>
-<td>SCRIPT KILL</td>
-<td>杀死当前正在运行的 Lua 脚本</td>
-</tr>
-<tr>
-<td>SCRIPT LOAD script</td>
-<td>将脚本 script 添加到脚本缓存中，但并不立即执行这个脚本</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Redis-数据备份与恢复"><a href="#Redis-数据备份与恢复" class="headerlink" title="Redis 数据备份与恢复"></a>Redis 数据备份与恢复</h4><p>Redis 提供了不同级别的持久化方式:</p>
-<li>RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储.</li><br><li>AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大.</li>
-
-<h5 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h5><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><li>RDB是一个非常紧凑的文件,它保存了某个时间点得数据集,非常适用于数据集的备份,比如你可以在每个小时报保存一下过去24小时内的数据,同时每天保存过去30天的数据,这样即使出了问题你也可以根据需求恢复到不同版本的数据集.</li><br><li>RDB是一个紧凑的单一文件,很方便传送到另一个远端数据中心或者亚马逊的S3（可能加密），非常适用于灾难恢复.</li><br><li>RDB在保存RDB文件时父进程唯一需要做的就是fork出一个子进程,接下来的工作全部由子进程来做，父进程不需要再做其他IO操作，所以RDB持久化方式可以最大化redis的性能.</li><br><li>与AOF相比,在恢复大的数据集的时候，RDB方式会更快一些.</li>
-
-<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><li>如果你希望在redis意外停止工作（例如电源中断）的情况下丢失的数据最少的话，那么RDB不适合你.虽然你可以配置不同的save时间点(例如每隔5分钟并且对数据集有100个写的操作),是Redis要完整的保存整个数据集是一个比较繁重的工作,你通常会每隔5分钟或者更久做一次完整的保存,万一在Redis意外宕机,你可能会丢失几分钟的数据.</li><br><li>RDB 需要经常fork子进程来保存数据集到硬盘上,当数据集比较大的时候,fork的过程是非常耗时的,可能会导致Redis在一些毫秒级内不能响应客户端的请求.如果数据集巨大并且CPU性能不是很好的情况下,这种情况会持续1秒,AOF也需要fork,但是你可以调节重写日志文件的频率来提高数据集的耐久度.</li>
-
-<h5 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h5><h6 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h6><li>使用AOF 会让你的Redis更加耐久: 你可以使用不同的fsync策略：无fsync,每秒fsync,每次写的时候fsync.使用默认的每秒fsync策略,Redis的性能依然很好(fsync是由后台线程进行处理的,主线程会尽力处理客户端请求),一旦出现故障，你最多丢失1秒的数据.</li><br><li>AOF文件是一个只进行追加的日志文件,所以不需要写入seek,即使由于某些原因(磁盘空间已满，写的过程中宕机等等)未执行完整的写入命令,你也也可使用redis-check-aof工具修复这些问题.</li><br><li>Redis 可以在 AOF 文件体积变得过大时，自动地在后台对 AOF 进行重写： 重写后的新 AOF 文件包含了恢复当前数据集所需的最小命令集合。 整个重写操作是绝对安全的，因为 Redis 在创建新 AOF 文件的过程中，会继续将命令追加到现有的 AOF 文件里面，即使重写过程中发生停机，现有的 AOF 文件也不会丢失。 而一旦新 AOF 文件创建完毕，Redis 就会从旧 AOF 文件切换到新 AOF 文件，并开始对新 AOF 文件进行追加操作。</li><br><li>AOF 文件有序地保存了对数据库执行的所有写入操作， 这些写入操作以 Redis 协议的格式保存， 因此 AOF 文件的内容非常容易被人读懂， 对文件进行分析（parse）也很轻松。 导出（export） AOF 文件也非常简单： 举个例子， 如果你不小心执行了 FLUSHALL 命令， 但只要 AOF 文件未被重写， 那么只要停止服务器， 移除 AOF 文件末尾的 FLUSHALL 命令， 并重启 Redis ， 就可以将数据集恢复到 FLUSHALL 执行之前的状态。</li>
-
-<h6 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h6><li>对于相同的数据集来说，AOF 文件的体积通常要大于 RDB 文件的体积。</li><br><li>根据所使用的 fsync 策略，AOF 的速度可能会慢于 RDB 。 在一般情况下， 每秒 fsync 的性能依然非常高， 而关闭 fsync 可以让 AOF 的速度和 RDB 一样快， 即使在高负荷之下也是如此。 不过在处理巨大的写入载入时，RDB 可以提供更有保证的最大延迟时间（latency）。</li>
-
-<h5 id="命令-3"><a href="#命令-3" class="headerlink" title="命令"></a>命令</h5><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SAVE</td>
-<td>创建当前数据库的备份,该命令将在 redis 安装目录中创建dump.rdb文件</td>
-</tr>
-<tr>
-<td>BGSAVE</td>
-<td>创建 redis 备份文件也可以使用命令 BGSAVE，该命令在后台执行</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>如果需要恢复数据，只需将备份文件 (dump.rdb) 移动到 redis 安装目录并启动服务即可</p>
-</blockquote>
-<h4 id="Redis-管道技术"><a href="#Redis-管道技术" class="headerlink" title="Redis 管道技术"></a>Redis 管道技术</h4><p>Redis是一种基于客户端-服务端模型以及请求/响应协议的TCP服务。这意味着通常情况下一个请求会遵循以下步骤：<br></p>
-<li>客户端向服务端发送一个查询请求，并监听Socket返回，通常是以阻塞模式，等待服务端响应。</li><br><li>服务端处理命令，并将结果返回给客户端。</li>
-
-<p>更多知识详见<a href="http://www.redis.cn/documentation.html" target="_blank" rel="external">官方文档</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/15/redis/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
