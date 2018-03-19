@@ -114,19 +114,19 @@
 
 
 
-<meta name="description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被">
+<meta name="description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。">
 <meta name="keywords" content="redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis高级知识">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/redis/redis/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被">
+<meta property="og:description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png">
-<meta property="og:updated_time" content="2018-03-18T13:09:42.932Z">
+<meta property="og:updated_time" content="2018-03-19T16:17:31.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis高级知识">
-<meta name="twitter:description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被">
+<meta name="twitter:description" content="Redis 发布订阅Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。">
 <meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png">
 
 
@@ -450,10 +450,11 @@
       
 
       
-        <h4 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h4><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。<br><br>Redis 客户端可以订阅任意数量的频道。<br><br>下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png" alt=""><br>当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png" alt=""></p>
+        <h4 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h4><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。<br><br>Redis 客户端可以订阅任意数量的频道。<br></p>
+<a id="more"></a>
+<p>下图展示了频道 channel1 ， 以及订阅这个频道的三个客户端 —— client2 、 client5 和 client1 之间的关系：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub1.png" alt=""><br>当有新消息通过 publish 命令发送给频道 channel1 时， 这个消息就会被发送给订阅它的三个客户端：<br><br><img src="http://www.runoob.com/wp-content/uploads/2014/11/pubsub2.png" alt=""></p>
 <h6 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h6><p>以下实例演示了发布订阅是如何工作的。在我们实例中我们创建了订阅频道名为 redisChat:<br></p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; SUBSCRIBE redisChat</div><div class="line"></div><div class="line"><span class="function"><span class="title">Reading</span></span> messages... (press Ctrl-C to quit)</div><div class="line"><span class="number">1</span>) <span class="string">"subscribe"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) (<span class="keyword">integer</span>) <span class="number">1</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>现在，我们先重新开启个 redis 客户端，然后在同一个频道 redisChat 发布两次消息，订阅者就能接收到消息。<br></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">redis</span> <span class="number">127.0.0.1:6379</span>&gt; publish redisChat <span class="string">"Redis is a great caching technique"</span></div><div class="line"></div><div class="line">(integer) <span class="number">1</span></div><div class="line"></div><div class="line">redis <span class="number">127.0.0.1:6379</span>&gt; publish redisChat <span class="string">"Learn redis by runoob.com"</span></div><div class="line"></div><div class="line">(integer) <span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># 订阅者的客户端会显示如下消息</span></div><div class="line"><span class="number">1</span>) <span class="string">"message"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) <span class="string">"Redis is a great caching technique"</span></div><div class="line"><span class="number">1</span>) <span class="string">"message"</span></div><div class="line"><span class="number">2</span>) <span class="string">"redisChat"</span></div><div class="line"><span class="number">3</span>) <span class="string">"Learn redis by runoob.com"</span></div></pre></td></tr></table></figure>
 <h6 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h6><table>
@@ -644,8 +645,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/15/captcha/jcaptcha/" rel="next" title="Jcaptcha验证码介绍">
-                <i class="fa fa-chevron-left"></i> Jcaptcha验证码介绍
+              <a href="/2018/03/15/redis/redis-introduction/" rel="next" title="Redis入门">
+                <i class="fa fa-chevron-left"></i> Redis入门
               </a>
             
           </div>
@@ -654,8 +655,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/15/redis/redis-introduction/" rel="prev" title="Redis入门">
-                Redis入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/18/git/" rel="prev" title="Git知识">
+                Git知识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -733,7 +734,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -744,7 +745,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -755,7 +756,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -874,7 +875,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共13.2k字</span>
+  <span class="post-count">全站共15.1k字</span>
 </div>
 
         
