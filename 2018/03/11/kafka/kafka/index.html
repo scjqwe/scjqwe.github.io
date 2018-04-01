@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="kafka," />
 
 
 
@@ -114,17 +114,22 @@
 
 
 
-<meta name="description" content="为什么我要开始要写博客&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从15年11月份以来，这一年多在企业工作的日子里，我收获许多。作为一个渴望学技术的程序员，我慢慢摆脱了学校的那种安逸的生活，开始走上了技术宅的道路。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在企业中，前几个月的时间里，我每天都像是海绵一样吸收着养分，学习企业的架构，项目的开发，部署，优化以及维护工作。我每天都痛苦并快乐着">
-<meta name="keywords" content="随笔">
+<meta name="description" content="环境搭建(Linux)1. Kafka下载 下载地址：http://kafka.apache.org/downloads wget http://apache.fayea.com/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz tar -xvf kafka_2.11-0.10.1.0.tgzcd kafka_2.11-0.10.1.0  2. Zookeeper安装K">
+<meta name="keywords" content="kafka">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2017/07/16/My-first-post/index.html">
+<meta property="og:title" content="Kafka知识探索">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/kafka/kafka/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="为什么我要开始要写博客&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从15年11月份以来，这一年多在企业工作的日子里，我收获许多。作为一个渴望学技术的程序员，我慢慢摆脱了学校的那种安逸的生活，开始走上了技术宅的道路。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在企业中，前几个月的时间里，我每天都像是海绵一样吸收着养分，学习企业的架构，项目的开发，部署，优化以及维护工作。我每天都痛苦并快乐着">
-<meta property="og:updated_time" content="2018-03-15T16:19:49.226Z">
+<meta property="og:description" content="环境搭建(Linux)1. Kafka下载 下载地址：http://kafka.apache.org/downloads wget http://apache.fayea.com/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz tar -xvf kafka_2.11-0.10.1.0.tgzcd kafka_2.11-0.10.1.0  2. Zookeeper安装K">
+<meta property="og:image" content="http://img.blog.csdn.net/20170520173825028?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170520180436658?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170520180325504?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170523104303032?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-03-12T15:07:23.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="为什么我要开始要写博客&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;从15年11月份以来，这一年多在企业工作的日子里，我收获许多。作为一个渴望学技术的程序员，我慢慢摆脱了学校的那种安逸的生活，开始走上了技术宅的道路。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在企业中，前几个月的时间里，我每天都像是海绵一样吸收着养分，学习企业的架构，项目的开发，部署，优化以及维护工作。我每天都痛苦并快乐着">
+<meta name="twitter:title" content="Kafka知识探索">
+<meta name="twitter:description" content="环境搭建(Linux)1. Kafka下载 下载地址：http://kafka.apache.org/downloads wget http://apache.fayea.com/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz tar -xvf kafka_2.11-0.10.1.0.tgzcd kafka_2.11-0.10.1.0  2. Zookeeper安装K">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170520173825028?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -153,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/16/My-first-post/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/kafka/kafka/"/>
 
 
 
 
 
-  <title>第一篇博客 | 个人博客</title>
+  <title>Kafka知识探索 | 个人博客</title>
   
 
 
@@ -327,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/16/My-first-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/kafka/kafka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kumu">
@@ -344,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一篇博客</h1>
+          <h1 class="post-title" itemprop="name headline">Kafka知识探索</h1>
         
 
         <div class="post-meta">
@@ -356,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T11:17:11+08:00">
-                2017-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T11:08:00+08:00">
+                2018-03-11
               </time>
             
 
@@ -379,8 +384,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/kafka/" itemprop="url" rel="index">
+                    <span itemprop="name">kafka</span>
                   </a>
                 </span>
 
@@ -410,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  653
+                  2,943
                 </span>
               
 
@@ -426,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  11
                 </span>
               
             </div>
@@ -447,11 +452,74 @@
       
 
       
-        <h3 id="为什么我要开始要写博客"><a href="#为什么我要开始要写博客" class="headerlink" title="为什么我要开始要写博客"></a>为什么我要开始要写博客</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;从15年11月份以来，这一年多在企业工作的日子里，我收获许多。作为一个渴望学技术的程序员，我慢慢摆脱了学校的那种安逸的生活，开始走上了技术宅的道路。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;在企业中，前几个月的时间里，我每天都像是海绵一样吸收着养分，学习企业的架构，项目的开发，部署，优化以及维护工作。我每天都痛苦并快乐着，虽然加班，但是我能感觉到自己一点一点的在往上爬。我学会SpringMVC架构，学会使用Maven构建项目，用Ant来实现自动部署项目，用Groovy脚本来编写告警任务。学会了很多软件，诸如MongoDB，Redis等常用开发软件。这个过程中，我很快乐，并且每天都在进步。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;但是到了17年的3,4月份，我熟悉了团队的各种业务，也明白了项目中所用到的框架和各种技术。我每天做的除了日常的开发和维护，似乎陷入了重复造轮子的困境。虽然在这过程中，我学会了怎样去考虑到新业务或新场景的设计流程和后续的维护过程，但是我始终感觉到了自己的进步慢慢的缓下了，这是我不希望看到的，我渴望进步和成功。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;最终，我看到了一句话，“种一棵树，最好的时间是十年前，其次，是现在”，我开始领悟到我必须改变点什么。我开始看基础的JAVA进阶等书籍，开始每天看技术博客或推文，培养自己的兴趣，并且从现在开始，写博客。我以前似乎总在犹豫，我常常害怕自己的技术不够好，但是，从另外一个方面想，这又有什么关系，那就学吧。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;为什么写博客，因为它是对你看到，用到知识的升华。在写博客的过程中，不仅会让你review以前的代码，考虑更好的设计方案，也会让你对知识的理解更上一层楼，并记忆深刻。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;写代码的时候，往往避免不了遇到各种BUG和技术难点，但是没关系，多请教别人，大多数人愿意和你分享自己的所得。和优秀的人多交流，你们会相互收益。最后，最重要的是，告诉自己不要怕，并且时刻保持一个谦卑的心。</p>
+        <h3 id="环境搭建-Linux"><a href="#环境搭建-Linux" class="headerlink" title="环境搭建(Linux)"></a>环境搭建(Linux)</h3><h4 id="1-Kafka下载"><a href="#1-Kafka下载" class="headerlink" title="1. Kafka下载"></a>1. Kafka下载</h4><ul>
+<li>下载地址：<a href="http://kafka.apache.org/downloads" target="_blank" rel="external">http://kafka.apache.org/downloads</a></li>
+<li>wget <a href="http://apache.fayea.com/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz" target="_blank" rel="external">http://apache.fayea.com/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz</a></li>
+<li>tar -xvf kafka_2.11-0.10.1.0.tgz<br>cd kafka_2.11-0.10.1.0</li>
+</ul>
+<h4 id="2-Zookeeper安装"><a href="#2-Zookeeper安装" class="headerlink" title="2. Zookeeper安装"></a>2. Zookeeper安装</h4><p>Kafka需要Zookeeper的监控，所以先要安装Zookeeper，如何安装请传送至：<br>     <a href="http://blog.csdn.net/trigl/article/details/52401847" target="_blank" rel="external">hadoop</a>、<br>     <a href="http://blog.csdn.net/trigl/article/details/52401847" target="_blank" rel="external">zookeeper</a>、<br>     <a href="http://blog.csdn.net/trigl/article/details/52401847" target="_blank" rel="external">hbase</a>、<a href="http://blog.csdn.net/trigl/article/details/52401847" target="_blank" rel="external">spark集群环境搭建</a> ，<br>安装完成以后依次启动各个节点</p>
+
+<a id="more"></a>
+<h4 id="3-配置kafka-broker集群"><a href="#3-配置kafka-broker集群" class="headerlink" title="3. 配置kafka broker集群"></a>3. 配置kafka broker集群</h4><ul>
+<li>首先把Kafka解压后的目录复制到集群的各台服务器</li>
+<li>然后修改各个服务器的配置文件：进入Kafka的config目录，修改server.properties<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brokerid就是指各台服务器对应的id，所以各台服务器值不同</span></div><div class="line">broker.<span class="attribute">id</span>=0</div><div class="line"><span class="comment"># 端口号，无需改变</span></div><div class="line"><span class="attribute">port</span>=9092</div><div class="line"><span class="comment"># 当前服务器的IP，各台服务器值不同</span></div><div class="line">host.<span class="attribute">name</span>=192.168.0.10</div><div class="line"><span class="comment"># Zookeeper集群的ip和端口号</span></div><div class="line">zookeeper.<span class="attribute">connect</span>=192.168.0.10:2181,192.168.0.11:2181,192.168.0.12:2181</div><div class="line"><span class="comment"># 日志目录</span></div><div class="line">log.<span class="attribute">dirs</span>=/home/www/kafka-logs</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-启动Kafka"><a href="#4-启动Kafka" class="headerlink" title="4. 启动Kafka"></a>4. 启动Kafka</h4><ul>
+<li>在每台服务器上进入Kafka目录，分别执行以下命令：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/kafka-server-start<span class="selector-class">.sh</span> config/server<span class="selector-class">.properties</span> &amp;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-Kafka常用命令"><a href="#5-Kafka常用命令" class="headerlink" title="5. Kafka常用命令"></a>5. Kafka常用命令</h4><ul>
+<li><h5 id="5-1-新建topic"><a href="#5-1-新建topic" class="headerlink" title="5.1 新建topic"></a>5.1 新建topic</h5><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">hxf:2181</span><span class="string">,</span><span class="comment">cfg:2181</span><span class="string">,</span><span class="comment">jqs:2181</span><span class="string">,</span><span class="comment">jxf:2181</span><span class="string">,</span><span class="comment">sxtb:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">test</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>test有两个复制因子和两个分区</p>
+</blockquote>
+<ul>
+<li><h5 id="5-2-查看某个topic主题"><a href="#5-2-查看某个topic主题" class="headerlink" title="5.2 查看某个topic主题"></a>5.2 查看某个topic主题</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/kafka-topics.sh --describe --zookeeper <span class="string">hxf:</span><span class="number">2181</span>,<span class="string">cfg:</span><span class="number">2181</span>,<span class="string">jqs:</span><span class="number">2181</span>,<span class="string">jxf:</span><span class="number">2181</span>,<span class="string">sxtb:</span><span class="number">2181</span> --topic test</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中第一行是所有分区的信息，下面的每一行对应一个分区<br><br>Leader：负责某个分区所有读写操作的节点<br><br>Replicas：复制因子节点<br><br>Isr：存活节点<br></p>
+<ul>
+<li><h5 id="5-3-查看Kafka所有的主题"><a href="#5-3-查看Kafka所有的主题" class="headerlink" title="5.3 查看Kafka所有的主题"></a>5.3 查看Kafka所有的主题</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/kafka-topics.<span class="keyword">sh</span> --<span class="keyword">list</span> --zookeeper hxf:<span class="number">2181</span>,<span class="keyword">cf</span><span class="variable">g:2181</span>,jq<span class="variable">s:2181</span>,jxf:<span class="number">2181</span>,sxt<span class="variable">b:2181</span></div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="5-4-终端发送消息"><a href="#5-4-终端发送消息" class="headerlink" title="5.4 终端发送消息"></a>5.4 终端发送消息</h5><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/kafka-console-producer.<span class="keyword">sh</span> --broker-<span class="keyword">list</span> localhost:9092 --topic <span class="keyword">test</span></div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="5-5-终端接收（消费）消息"><a href="#5-5-终端接收（消费）消息" class="headerlink" title="5.5 终端接收（消费）消息"></a>5.5 终端接收（消费）消息</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/kafka-console-consumer.sh --zookeeper <span class="string">hxf:</span><span class="number">2181</span>,<span class="string">cfg:</span><span class="number">2181</span>,<span class="string">jqs:</span><span class="number">2181</span>,<span class="string">jxf:</span><span class="number">2181</span>,<span class="string">sxtb:</span><span class="number">2181</span> --bootstrap-server <span class="string">localhost:</span><span class="number">9092</span> --topic test --from-beginning</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h4 id="1-基本术语"><a href="#1-基本术语" class="headerlink" title="1. 基本术语"></a>1. 基本术语</h4><h5 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h5><p>在Kafka中，每一个消息由键、值和一个时间戳组成</p>
+<h5 id="主题和日志"><a href="#主题和日志" class="headerlink" title="主题和日志"></a>主题和日志</h5><p> Kafka集群存储同一类别的消息流称为主题</p><br><p> 主题会有多个订阅者（0个1个或多个），当<strong>主题发布消息时，会向订阅者推送记录</strong></p><br><p> 针对每一个主题，Kafka集群维护了一个像下面这样的分区日志：</p><br><img src="http://img.blog.csdn.net/20170520173825028?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><p> 这些分区位于不同的服务器上，每一个分区可以看做是一个结构化的提交日志，<strong>每写入一条记录都会记录到其中一个分区并且分配一个唯一地标识其位置的数字称为偏移量offset</strong></p><br><p> <strong>Kafka集群会将发布的消息保存一段时间，不管是否被消费</strong>。例如，如果设置保存天数为2天，那么从消息发布起的两天之内，该消息一直可以被消费，但是超过两天后就会被丢弃以节省空间。其次，Kafka的数据持久化性能很好，所以长时间存储数据不是问题</p><br><p>如下图所示，<strong>生产者每发布一条消息就会向分区log写入一条记录的offset，而消费者就是通过offset来读取对应的消息的，一般来说每读取一条消息，消费者对应要读取的offset就加1</strong>，例如最后一条读到offset=12，那么下条offset就为13.由于消费者通过offset来读取消息，所以可以重复读取已经读过的记录，或者跳过某些记录不读</p><br><img src="http://img.blog.csdn.net/20170520180436658?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><p>Kafka中采用分区的设计有几个目的。一是<strong>可以处理更多的消息，不受单台服务器的限制</strong>。Topic拥有多个分区意味着它可以不受限的处理更多的数据。第二，<strong>分区可以作为并行处理的单元</strong></p>
+
+<h5 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h5><p>Log的分区被分布到集群中的多个服务器上。每个服务器处理它分到的分区。 根据配置每个分区还可以复制到其它服务器作为备份容错</p><br><p>每个分区有一个leader，零或多个follower。Leader处理此分区的所有的读写请求，而follower被动的复制数据。如果leader宕机，其它的一个follower会被推举为新的leader。 <strong>一台服务器可能同时是一个分区的leader，另一个分区的follower。 这样可以平衡负载，避免所有的请求都只让一台或者某几台服务器处理</strong></p>
+
+<h5 id="生产者"><a href="#生产者" class="headerlink" title="生产者"></a>生产者</h5><p>生产者往某个Topic上发布消息。生产者还可以选择将消息分配到Topic的哪个节点上。<strong>最简单的方式是轮询分配到各个分区以平衡负载，也可以根据某种算法依照权重选择分区</strong></p>
+
+<h5 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h5><p>Kafka有一个消费者组的概念，生产者把消息发到的是消费者组，在消费者组里面可以有很多个消费者实例，如下图所示： </p><br><img src="http://img.blog.csdn.net/20170520180325504?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><p>Kafka集群有两台服务器，四个分区，此外有两个消费者组A和B，消费者组A具有2个消费者实例C1-2，消费者B具有4个消费者实例C3-6</p><br><p>那么Kafka发送消息的过程是怎样的呢？</p><br><p>例如此时我们创建了一个主题test，有两个分区，分别是Server1的P0和Server2的P1，假设此时我们通过test发布了一条消息，那么这条消息是发到P0还是P1呢，或者是都发呢？答案是只会发到P0或P1其中之一，也就是消息只会发给其中的一个分区</p><br><p>分区接收到消息后会记录在分区日志中，记录的方式我们讲过了，就是通过offset，正因为有这个偏移量的存在，所以一个分区内的消息是有先后顺序的，即offset大的消息比offset小的消息后到。但是注意，由于消息随机发往主题的任意一个分区，因此虽然同一个分区的消息有先后顺序，但是不同分区之间的消息就没有先后顺序了，那么如果我们要求消费者顺序消费主题发的消息那该怎么办呢，此时只要在创建主题的时候只提供一个分区即可</p><br><p>讲完了主题发消息，接下来就该消费者消费消息了，假设上面test的消息发给了分区P0，此时从图中可以看到，有两个消费者组，那么P0将会把消息发到哪个消费者组呢？从图中可以看到，P0把消息既发给了消费者组A也发给了B，但是A中消息仅被C1消费，B中消息仅被C3消费。这就是我们要讲的，主题发出的消息会发往所有的消费者组，而每一个消费者组下面可以有很多消费者实例，这条消息只会被他们中的一个消费掉</p>
+
+<h4 id="2-核心API"><a href="#2-核心API" class="headerlink" title="2. 核心API"></a>2. 核心API</h4><p>Kafka具有4个核心API：</p>
+<ol>
+<li>Producer API：用于向Kafka主题发送消息。</li>
+<li>Consumer API：用于从订阅主题接收消息并且处理这些消息。</li>
+<li>Streams API：作为一个流处理器，用于从一个或者多个主题中消费消息流然后为其他主题生产消息流，高效地将输入流转换为输出流。</li>
+<li>Connector API：用于构建和运行将Kafka主题和已有应用或者数据系统连接起来的可复用的生产者或消费者。例如一个主题到一个关系型数据库的连接能够捕获表的任意变化。<br><img src="http://img.blog.csdn.net/20170523104303032?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVHJpZ2w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+</ol>
+<h4 id="3-应用场景"><a href="#3-应用场景" class="headerlink" title="3. 应用场景"></a>3. 应用场景</h4><h5 id="Kafka用作消息系统"><a href="#Kafka用作消息系统" class="headerlink" title="Kafka用作消息系统"></a>Kafka用作消息系统</h5><p>Kafka流的概念与传统企业消息系统有什么异同？</p><br><p>传统消息系统有两个模型：队列和发布-订阅系统。在队列模式中，每条服务器的消息会被消费者池中的一个所读取；而发布-订阅系统中消息会广播给所有的消费者。这两种模式各有优劣。队列模式的优势是可以将消息数据让多个消费者处理以实现程序的可扩展，然而这就导致其没有多个订阅者，只能用于一个进程。发布-订阅模式的好处在于数据可以被多个进程消费使用，但是却无法使单一程序扩展性能</p><br><p>Kafka中消费者组的概念同时涵盖了这两方面。对应于队列的概念，Kafka中每个消费者组中有多个消费者实例可以接收消息；对应于发布-订阅模式，Kafka中可以指定多个消费者组来订阅消息<br></p><p>相对传统消息系统，Kafka可以提供更强的顺序保证</p>
+
+<h5 id="Kafka用作存储系统"><a href="#Kafka用作存储系统" class="headerlink" title="Kafka用作存储系统"></a>Kafka用作存储系统</h5><p>任何发布消息与消费消息解耦的消息队列其实都可以看做是用来存放发布的消息的存储系统，而Kafka是一个非常高效的存储系统<br></p><p>写入Kafka的数据会被存入磁盘并且复制到集群中以容错。Kafka允许生产者等待数据完全复制并且确保持久化到磁盘的确认应答</p><br><p>Kafka使用的磁盘结构扩容性能很好——不管服务器上有50KB还是50TB，Kafka的表现都是一样的</p><br><p>由于能够精致的存储并且供客户端程序进行读操作，你可以把Kafka看做是一个用于高性能、低延迟的存储提交日志、复制及传播的分布式文件系统</p>
+
+<h5 id="Kafka的流处理"><a href="#Kafka的流处理" class="headerlink" title="Kafka的流处理"></a>Kafka的流处理</h5><p>仅仅读、写、存储流数据是不够的，Kafka的目的是实现实时流处理。</p><br><p>在Kafka中一个流处理器的处理流程是首先持续性的从输入主题中获取数据流，然后对其进行一些处理，再持续性地向输出主题中生产数据流。例如一个销售商应用，接收销售和发货量的输入流，输出新订单和调整后价格的输出流</p><br><p>可以直接使用producer和consumer API进行简单的处理。对于复杂的转换，Kafka提供了更强大的Streams API。可构建聚合计算或连接流到一起的复杂应用程序</p><br><p>流处理有助于解决这类应用面临的硬性问题：处理无序数据、代码更改的再处理、执行状态计算等</p><br><p>Streams API所依托的都是Kafka的核心内容：使用producer和consumer API作为输入，使用Kafka作为状态存储，在流处理实例上使用相同的组机制来实现容错</p>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="消费者自动提交"><a href="#消费者自动提交" class="headerlink" title="消费者自动提交"></a>消费者自动提交</h4><p>使用如下api自动提交：</p>
+
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">properties</span>.<span class="built_in">put</span>(<span class="string">"enable.auto.commit"</span>, <span class="string">"false"</span>);</div></pre></td></tr></table></figure>
+<h4 id="消费者手动提交"><a href="#消费者手动提交" class="headerlink" title="消费者手动提交"></a>消费者手动提交</h4><p>每个消费者和对应的patition建立对应的流来读取kafka上面的数据，如果comsumer得到数据，那么kafka就会自动去维护该comsumer的offset，例如在获取到kafka的消息后正准备入库（未入库），但是消费者挂了，那么如果让kafka自动去维护offset，它就会认为这条数据已经被消费了，那么会造成数据丢失。</p><br><p>但是kafka可以让你自己去手动提交，如果在上面的场景中，那么需要我们手动commit，如果comsumer挂了 那么程序就不会执行commit这样的话 其他同group的消费者又可以消费这条数据，保证数据不丢，先要做如下设置：</p>
+
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置不自动提交，自己手动更新offset</span></div><div class="line">properties.<span class="built_in">put</span>(<span class="string">"enable.auto.commit"</span>, <span class="string">"false"</span>);</div></pre></td></tr></table></figure>
+<p>使用如下api提交：</p>
+
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">consumer.commitSync()<span class="comment">;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -480,7 +548,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"><i class="fa fa-tag"></i> 随笔</a>
+            <a href="/tags/kafka/" rel="tag"><i class="fa fa-tag"></i> kafka</a>
           
         </div>
       
@@ -493,14 +561,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/04/ELK/" rel="next" title="ELK环境搭建">
+                <i class="fa fa-chevron-left"></i> ELK环境搭建
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/22/spring/spring-boot/spring-introduction/" rel="prev" title="Spring-cloud入门介绍">
-                Spring-cloud入门介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/15/captcha/jcaptcha/" rel="prev" title="Jcaptcha验证码介绍">
+                Jcaptcha验证码介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -666,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么我要开始要写博客"><span class="nav-number">1.</span> <span class="nav-text">为什么我要开始要写博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建-Linux"><span class="nav-number">1.</span> <span class="nav-text">环境搭建(Linux)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Kafka下载"><span class="nav-number">1.1.</span> <span class="nav-text">1. Kafka下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Zookeeper安装"><span class="nav-number">1.2.</span> <span class="nav-text">2. Zookeeper安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-配置kafka-broker集群"><span class="nav-number">1.3.</span> <span class="nav-text">3. 配置kafka broker集群</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-启动Kafka"><span class="nav-number">1.4.</span> <span class="nav-text">4. 启动Kafka</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Kafka常用命令"><span class="nav-number">1.5.</span> <span class="nav-text">5. Kafka常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-新建topic"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 新建topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-查看某个topic主题"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 查看某个topic主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-查看Kafka所有的主题"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 查看Kafka所有的主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-4-终端发送消息"><span class="nav-number">1.5.4.</span> <span class="nav-text">5.4 终端发送消息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-5-终端接收（消费）消息"><span class="nav-number">1.5.5.</span> <span class="nav-text">5.5 终端接收（消费）消息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本术语"><span class="nav-number">2.1.</span> <span class="nav-text">1. 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#消息"><span class="nav-number">2.1.1.</span> <span class="nav-text">消息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主题和日志"><span class="nav-number">2.1.2.</span> <span class="nav-text">主题和日志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分布式"><span class="nav-number">2.1.3.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生产者"><span class="nav-number">2.1.4.</span> <span class="nav-text">生产者</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#消费者"><span class="nav-number">2.1.5.</span> <span class="nav-text">消费者</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-核心API"><span class="nav-number">2.2.</span> <span class="nav-text">2. 核心API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-应用场景"><span class="nav-number">2.3.</span> <span class="nav-text">3. 应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Kafka用作消息系统"><span class="nav-number">2.3.1.</span> <span class="nav-text">Kafka用作消息系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Kafka用作存储系统"><span class="nav-number">2.3.2.</span> <span class="nav-text">Kafka用作存储系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Kafka的流处理"><span class="nav-number">2.3.3.</span> <span class="nav-text">Kafka的流处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#消费者自动提交"><span class="nav-number">3.1.</span> <span class="nav-text">消费者自动提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消费者手动提交"><span class="nav-number">3.2.</span> <span class="nav-text">消费者手动提交</span></a></li></ol></li></ol></div>
             
 
           </div>
