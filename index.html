@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  136
+                  150
                 </span>
               
 
@@ -450,9 +450,10 @@
           
             <h3 id="生产者"><a href="#生产者" class="headerlink" title="生产者"></a>生产者</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>KafkaTemplate封装了一个生成器，并提供了方便的方法来发送数据到kafka主题。 提供了异步和同步方法，异步方法返回一个Future。<br>其构造方法有：</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; sendDefault(V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; sendDefault(<span class="keyword">K</span> key, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; sendDefault(int partition, <span class="keyword">K</span> key, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; send(<span class="keyword">String</span> topic, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; send(<span class="keyword">String</span> topic, <span class="keyword">K</span> key, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; send(<span class="keyword">String</span> topic, int partition, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; send(<span class="keyword">String</span> topic, int partition, <span class="keyword">K</span> key, V data);</div><div class="line"></div><div class="line">ListenableFuture&lt;SendResult&lt;<span class="keyword">K</span>, V&gt;&gt; send(<span class="keyword">Message</span>&lt;?&gt; message);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>前3个方法需要向Temple提供默认主题</p>
+</blockquote>
 <!-- more -- >
-
->前3个方法需要向Temple提供默认主题
 
 #### 配置
 使用Producer配置类
@@ -2382,7 +2383,7 @@ kibana：5.5.1
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共15.2k字</span>
+  <span class="post-count">全站共15.3k字</span>
 </div>
 
         
