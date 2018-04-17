@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-17T15:48:25.821Z</updated>
+  <updated>2018-04-17T15:55:29.691Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://yoursite.com/2018/04/17/mysql/lock/"/>
     <id>http://yoursite.com/2018/04/17/mysql/lock/</id>
     <published>2018-04-17T15:19:00.000Z</published>
-    <updated>2018-04-17T15:48:25.821Z</updated>
+    <updated>2018-04-17T15:55:29.691Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在数据库的锁机制中介绍过，数据库管理系统（DBMS）中的并发控制的任务是确保在多个事务同时存取数据库中同一数据时不破坏事务的隔离性和统一性以及数据库的统一性。</p>
-<p>乐观并发控制(乐观锁)和悲观并发控制（悲观锁）是并发控制主要采用的技术手段。</p>
+<p><strong>乐观并发控制(乐观锁)</strong> 和 <strong>悲观并发控制（悲观锁）</strong> 是并发控制主要采用的技术手段。</p>
 <a id="more"></a>
 <p>无论是悲观锁还是乐观锁，都是人们定义出来的概念，可以认为是一种思想。其实不仅仅是关系型数据库系统中有乐观锁和悲观锁的概念，像memcache、hibernate、tair等都有类似的概念。</p>
 <p>针对于不同的业务场景，应该选用不同的并发控制方式。所以，不要把乐观并发控制和悲观并发控制狭义的理解为DBMS中的概念，更不要把他们和数据中提供的锁机制（行锁、表锁、排他锁、共享锁）混为一谈。其实，在DBMS中，悲观锁正是利用数据库本身提供的锁机制来实现的。</p>
@@ -64,7 +64,7 @@
     <summary type="html">
     
       &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;在数据库的锁机制中介绍过，数据库管理系统（DBMS）中的并发控制的任务是确保在多个事务同时存取数据库中同一数据时不破坏事务的隔离性和统一性以及数据库的统一性。&lt;/p&gt;
-&lt;p&gt;乐观并发控制(乐观锁)和悲观并发控制（悲观锁）是并发控制主要采用的技术手段。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;乐观并发控制(乐观锁)&lt;/strong&gt; 和 &lt;strong&gt;悲观并发控制（悲观锁）&lt;/strong&gt; 是并发控制主要采用的技术手段。&lt;/p&gt;
     
     </summary>
     
