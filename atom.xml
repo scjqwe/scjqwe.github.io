@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-17T15:59:00.797Z</updated>
+  <updated>2018-04-17T16:02:32.942Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2018/04/17/mysql/lock/"/>
     <id>http://yoursite.com/2018/04/17/mysql/lock/</id>
     <published>2018-04-17T15:19:00.000Z</published>
-    <updated>2018-04-17T15:59:00.797Z</updated>
+    <updated>2018-04-17T16:02:32.942Z</updated>
     
     <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在数据库的锁机制中介绍过，数据库管理系统（DBMS）中的并发控制的任务是确保在多个事务同时存取数据库中同一数据时不破坏事务的隔离性和统一性以及数据库的统一性。</p>
 <p><strong>乐观并发控制(乐观锁)</strong> 和 <strong>悲观并发控制（悲观锁）</strong> 是并发控制主要采用的技术手段。</p>
@@ -68,10 +68,8 @@
     
     </summary>
     
-      <category term="kafka" scheme="http://yoursite.com/categories/kafka/"/>
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
       <category term="lock" scheme="http://yoursite.com/tags/lock/"/>
     
