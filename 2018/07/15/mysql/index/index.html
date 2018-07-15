@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="索引," />
 
 
 
@@ -114,12 +114,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="数据结构二叉排序树（Binary Sort Tree）规则 若左子树不空，则左子树上所有节点的值均小于它的根节点的值 若右子树不空，则右子树上所有节点的值均大于它的根节点的值 它的左、右子树也分别为二叉排序树（递归定义）  说明二叉查找树查找比较方便，因为每次经过一次节点时，最多减少一半的可能。极端情况下，会出现所有节点位于同一侧的情况，直观上看就是一条直线，这种情况的查询效率比较低。因此需要对二">
+<meta name="keywords" content="索引">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL索引原理">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/mysql/index/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="数据结构二叉排序树（Binary Sort Tree）规则 若左子树不空，则左子树上所有节点的值均小于它的根节点的值 若右子树不空，则右子树上所有节点的值均大于它的根节点的值 它的左、右子树也分别为二叉排序树（递归定义）  说明二叉查找树查找比较方便，因为每次经过一次节点时，最多减少一半的可能。极端情况下，会出现所有节点位于同一侧的情况，直观上看就是一条直线，这种情况的查询效率比较低。因此需要对二">
+<meta property="og:image" content="http://yoursite.com/images/mysql/myisam_main_index.png">
+<meta property="og:image" content="http://yoursite.com/images/mysql/myisam_secondary_index.png">
+<meta property="og:image" content="http://yoursite.com/images/mysql/innodb_main_index.png">
+<meta property="og:image" content="http://yoursite.com/images/mysql/innodb_secondary_index.png">
+<meta property="og:updated_time" content="2018-07-15T16:29:51.611Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
+<meta name="twitter:title" content="MySQL索引原理">
+<meta name="twitter:description" content="数据结构二叉排序树（Binary Sort Tree）规则 若左子树不空，则左子树上所有节点的值均小于它的根节点的值 若右子树不空，则右子树上所有节点的值均大于它的根节点的值 它的左、右子树也分别为二叉排序树（递归定义）  说明二叉查找树查找比较方便，因为每次经过一次节点时，最多减少一半的可能。极端情况下，会出现所有节点位于同一侧的情况，直观上看就是一条直线，这种情况的查询效率比较低。因此需要对二">
+<meta name="twitter:image" content="http://yoursite.com/images/mysql/myisam_main_index.png">
 
 
 
@@ -148,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/15/mysql/index/"/>
 
 
 
 
 
-  <title>归档 | 个人博客</title>
+  <title>MySQL索引原理 | 个人博客</title>
   
 
 
@@ -179,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
     <a href="https://github.com/scjqwe"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
 
@@ -308,222 +318,250 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/mysql/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kumu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">MySQL索引原理</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T23:53:04+08:00">
+                2018-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 15 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/04/ELK/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">ELK环境搭建</span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,940
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-04T23:05:00+08:00"
-              content="2017-08-04" >
-          08-04
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/01/spring/spring-shiro/" itemprop="url">
-              
-                <span itemprop="name">Spring-Shiro介绍及其使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-01T11:17:11+08:00"
-              content="2017-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="二叉排序树（Binary-Sort-Tree）"><a href="#二叉排序树（Binary-Sort-Tree）" class="headerlink" title="二叉排序树（Binary Sort Tree）"></a>二叉排序树（Binary Sort Tree）</h4><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><ol>
+<li>若左子树不空，则左子树上所有节点的值均小于它的根节点的值</li>
+<li>若右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
+<li>它的左、右子树也分别为二叉排序树（递归定义）</li>
+</ol>
+<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>二叉查找树查找比较方便，因为每次经过一次节点时，最多减少一半的可能。极端情况下，会出现所有节点位于同一侧的情况，直观上看就是一条直线，这种情况的查询效率比较低。因此需要对二叉树左右子树的高度作平衡化处理，这就是平衡二叉树。</p>
+<h4 id="平衡二叉树（Balance-Binary-Tree）"><a href="#平衡二叉树（Balance-Binary-Tree）" class="headerlink" title="平衡二叉树（Balance Binary Tree）"></a>平衡二叉树（Balance Binary Tree）</h4><h5 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h5><ol>
+<li>左右子树的高度差的绝对值不超过1</li>
+<li>左右子树都是平衡二叉树（递归定义）</li>
+</ol>
+<h5 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h5><p>常见的实现方式为：红黑树，平衡二叉查找树（AVL）,替罪羊树，树堆（Treap），伸展树。在这样的平衡树中进行查找，总共比较节点的次数不超过树的高度，查询效率得到提高，时间复杂度为O(logn)。</p>
+<a id="more"></a>
+<h4 id="平衡多路查找树（B树或B-树）"><a href="#平衡多路查找树（B树或B-树）" class="headerlink" title="平衡多路查找树（B树或B-树）"></a>平衡多路查找树（B树或B-树）</h4><h5 id="规则-2"><a href="#规则-2" class="headerlink" title="规则"></a>规则</h5><ol>
+<li>每个节点至多可以拥有m棵子树</li>
+<li>根节点，只有至少2个节点</li>
+<li>非根非叶的节点至少有Ceil(m/2)个子树（Ceil表示向上取整），例如5阶B树，每个节点至少3个子树</li>
+<li>所有叶子节点位于同一层，意思是从根到叶子节点的每一条路径都有同样的长度</li>
+</ol>
+<h5 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h5><p>B树查询与二叉排序树类似，从根节点依次比较每个节点，<strong>因为每个节点中关键字和左右子树都是有序的</strong>。</p>
+<h4 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h4><h5 id="规则-3"><a href="#规则-3" class="headerlink" title="规则"></a>规则</h5><ol>
+<li>有n棵子树的节点含有n个关键字，每个关键字不保存数据，只用来索引，所有数据保存在叶子节点</li>
+<li>所有的叶子结点中包含了全部关键字的信息，及指向含这些关键字记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接</li>
+<li>非叶子节点看成是索引部分，结点中仅含其子树（根节点）中的最大（或最小）关键字</li>
+</ol>
+<h5 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h5><p>B+树查找过程与B树类似，<strong>只不过查找时，如果在非叶子节点上的关键字等于给定值，并不终止，而是继续沿着指针直到叶子节点</strong>。因此对于B+树，不管查找成功或失败，每次查找都是走了一条从根到叶子节点的路径。<br><br>通常在B+Tree上有两个头指针，一个指向根节点，另一个指向关键字最小的叶子节点，而且所有叶子节点（即数据节点）之间是一种链式环结构（<strong>双向循环链表</strong>）。因此可以对B+Tree进行两种查找运算：一种是对于主键的<strong>范围查找</strong>和<strong>分页查找</strong>，另一种是从根节点开始，进行<strong>随机查找</strong>。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="MyISAM索引实现"><a href="#MyISAM索引实现" class="headerlink" title="MyISAM索引实现"></a>MyISAM索引实现</h4><p>MyISAM引擎使用B+Tree作为索引结构，叶结点的data域存放的是数据记录的地址。</p>
+<h5 id="主索引-主键"><a href="#主索引-主键" class="headerlink" title="主索引(主键)"></a>主索引(主键)</h5><p><img src="/images/mysql/myisam_main_index.png" alt=""></p>
+<h5 id="辅助索引"><a href="#辅助索引" class="headerlink" title="辅助索引"></a>辅助索引</h5><p>在 MyISAM 中,主索引和辅助索引(Secondary key)在结构上没有任何区别，只是主索引要求 key 是唯一的,而辅助索引的 key 可以重复。<br><img src="/images/mysql/myisam_secondary_index.png" alt=""></p>
+<h5 id="说明-4"><a href="#说明-4" class="headerlink" title="说明"></a>说明</h5><p>同样也是一颗B+Tree，data域保存数据记录的地址。因此，MyISAM中索引检索的算法为首先按照B+Tree搜索算法搜索索引，如果指定的Key存在，则取出其data域的值，然后以data域的值为地址，读取相应数据记录。<br><br>MyISAM的索引方式也叫做“非聚集”的，之所以这么称呼是为了与InnoDB的聚集索引区分。</p>
+<h4 id="InnoDB索引实现"><a href="#InnoDB索引实现" class="headerlink" title="InnoDB索引实现"></a>InnoDB索引实现</h4><p>虽然InnoDB也使用B+Tree作为索引结构，但具体实现方式却与MyISAM截然不同。<br><br>第一个重大区别是<strong>InnoDB的数据文件本身就是索引文件</strong>。从上文知道，MyISAM索引文件和数据文件是分离的，索引文件仅保存数据记录的地址。而在InnoDB中，表数据文件本身就是按B+Tree组织的一个索引结构，这棵树的叶结点data域保存了完整的数据记录。这个索引的key是数据表的主键，因此<strong>InnoDB表数据文件本身就是主索引</strong>。</p>
+<h5 id="主索引-主键-1"><a href="#主索引-主键-1" class="headerlink" title="主索引(主键)"></a>主索引(主键)</h5><p><img src="/images/mysql/innodb_main_index.png" alt=""></p>
+<h5 id="辅助索引-1"><a href="#辅助索引-1" class="headerlink" title="辅助索引"></a>辅助索引</h5><p><img src="/images/mysql/innodb_secondary_index.png" alt=""></p>
+<h5 id="说明-5"><a href="#说明-5" class="headerlink" title="说明"></a>说明</h5><p>InnoDB存储引擎中页的大小为<strong>16KB</strong>，一般表的主键类型为INT（占用4个字节）或BIGINT（占用8个字节），指针类型也一般为4或8个字节，也就是说一个页（B+Tree中的一个节点）中大概存储16KB/(8B+8B)=1K个键值（因为是估值，为方便计算，这里的K取值为10^3）。也就是说一个深度为3的B+Tree索引可以维护10^3 <em> 10^3 </em> 10^3 = 10亿 条记录。实际情况中每个节点可能不能填充满，因此在数据库中，<strong>B+Tree的高度一般都在2~4层</strong>。mysql的InnoDB存储引擎在设计时是将根节点常驻内存的，也就是说查找某一键值的行记录时最多只需要1~3次磁盘I/O操作。<br><br>InnoDB <strong>要求表必须有主键(MyISAM 可以没有)</strong>，如果没有显式指定，则 MySQL系统会自动选择一个可以唯一标识数据记录的列作为主键,如果不存在这种列，则MySQL 自动为 InnoDB 表生成一个隐含字段作为主键,类型为长整形。<br><br>同时,请尽量在 InnoDB 上采用自增字段做表的主键。因为 InnoDB 数据文件本身是一棵B+Tree，非单调的主键会造成在插入新记录时数据文件为了维持 B+Tree 的特性而频繁的分裂调整，十分低效,而使用自增字段作为主键则是一个很好的选择。如果表使用自增主键,那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满,就会自动开辟一个新的页。</p>
+<h4 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h4><p>InnoDB 使用的是聚簇索引，将主键组织到一棵B+树中， 而行数据就储存在叶子节点上， 若使用”where id = 14”这样的条件查找主键，则按照 B+树的检索算法即可查找到对应的叶节点，之后获得行数据。 若对 Name 列进行条件搜索，则需要两个步骤:</p>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/22/thread-local/" itemprop="url">
-              
-                <span itemprop="name">ThreadLocal</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-22T18:54:25+08:00"
-              content="2017-07-22" >
-          07-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<ul>
+<li>第一步、在辅助索引 B+树中检索 Name，到达其叶子节点获取对应的主键。</li>
+<li>第二步、使用主键在主索引B+树种再执行一次 B+树检索操作，最终到达叶子节点即可获取整行数据。</li>
+</ul>
+<h4 id="非聚簇索引"><a href="#非聚簇索引" class="headerlink" title="非聚簇索引"></a>非聚簇索引</h4><p>MyISM 使用的是非聚簇索引, 非聚簇索引的两棵 B+树看上去没什么不同, 节点的结构完全一致只是存储的内容不同而已, 主键索引 B+树的节点存储了主键, 辅助键索引B+树存储了辅助键。 表数据存储在独立的地方, 这两颗 B+树的叶子节点都使用一个地址指向真正的表数据, 对于表数据来说, 这两个键没有任何差别。 由于索引树是独立的, 通过辅助键检索无需访问主键的索引树。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/22/spring/spring-boot/spring-introduction/" itemprop="url">
-              
-                <span itemprop="name">Spring-cloud入门介绍</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-22T18:52:56+08:00"
-              content="2017-07-22" >
-          07-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/16/My-first-post/" itemprop="url">
-              
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-16T11:17:11+08:00"
-              content="2017-07-16" >
-          07-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/索引/" rel="tag"><i class="fa fa-tag"></i> 索引</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/cache/cache-question/" rel="next" title="缓存常见问题">
+                <i class="fa fa-chevron-left"></i> 缓存常见问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -531,6 +569,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -551,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -645,6 +696,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉排序树（Binary-Sort-Tree）"><span class="nav-number">1.1.</span> <span class="nav-text">二叉排序树（Binary Sort Tree）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#规则"><span class="nav-number">1.1.1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明"><span class="nav-number">1.1.2.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树（Balance-Binary-Tree）"><span class="nav-number">1.2.</span> <span class="nav-text">平衡二叉树（Balance Binary Tree）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#规则-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡多路查找树（B树或B-树）"><span class="nav-number">1.3.</span> <span class="nav-text">平衡多路查找树（B树或B-树）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#规则-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树"><span class="nav-number">1.4.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#规则-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-3"><span class="nav-number">1.4.2.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyISAM索引实现"><span class="nav-number">2.1.</span> <span class="nav-text">MyISAM索引实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主索引-主键"><span class="nav-number">2.1.1.</span> <span class="nav-text">主索引(主键)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#辅助索引"><span class="nav-number">2.1.2.</span> <span class="nav-text">辅助索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-4"><span class="nav-number">2.1.3.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#InnoDB索引实现"><span class="nav-number">2.2.</span> <span class="nav-text">InnoDB索引实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主索引-主键-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">主索引(主键)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#辅助索引-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">辅助索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明-5"><span class="nav-number">2.2.3.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚簇索引"><span class="nav-number">2.3.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非聚簇索引"><span class="nav-number">2.4.</span> <span class="nav-text">非聚簇索引</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -778,11 +845,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
