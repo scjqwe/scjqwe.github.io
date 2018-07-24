@@ -114,17 +114,17 @@
 
 
 
-<meta name="description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
+<meta name="description" content="查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
 <meta name="keywords" content="jvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM进程常用参数">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/java/java-param/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
-<meta property="og:updated_time" content="2018-07-24T14:38:25.535Z">
+<meta property="og:description" content="查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
+<meta property="og:updated_time" content="2018-07-24T14:44:42.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM进程常用参数">
-<meta name="twitter:description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
+<meta name="twitter:description" content="查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
 
 
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  794
+                  785
                 </span>
               
 
@@ -447,9 +447,9 @@
       
 
       
-        <h3 id="Java进程常用参数说明"><a href="#Java进程常用参数说明" class="headerlink" title="Java进程常用参数说明"></a>Java进程常用参数说明</h3><h4 id="查看JDK参数"><a href="#查看JDK参数" class="headerlink" title="查看JDK参数"></a>查看JDK参数</h4><p>查看并行收集线程<br>/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads</p>
+        <h3 id="查看JDK参数"><a href="#查看JDK参数" class="headerlink" title="查看JDK参数"></a>查看JDK参数</h3><p>查看并行收集线程<br>/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads</p>
 <a id="more"></a>
-<h4 id="内存控制参数"><a href="#内存控制参数" class="headerlink" title="内存控制参数"></a>内存控制参数</h4><table>
+<h3 id="内存控制参数"><a href="#内存控制参数" class="headerlink" title="内存控制参数"></a>内存控制参数</h3><table>
 <thead>
 <tr>
 <th>参数名</th>
@@ -486,7 +486,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="XX参数"><a href="#XX参数" class="headerlink" title="-XX参数"></a>-XX参数</h4><p>-XX后面有部分参数可以跟+或者-,+表示开启,-表示禁用<br>比如<br>-XX:+UseGCOverheadLimit,就表示GC时间过长抛OOM<br>-XX:-UseGCOverheadLimit,就表示GC时间过长不要抛OOM</p>
+<h3 id="XX参数"><a href="#XX参数" class="headerlink" title="-XX参数"></a>-XX参数</h3><p>-XX后面有部分参数可以跟+或者-,+表示开启,-表示禁用<br>比如<br>-XX:+UseGCOverheadLimit,就表示GC时间过长抛OOM<br>-XX:-UseGCOverheadLimit,就表示GC时间过长不要抛OOM</p>
 <table>
 <thead>
 <tr>
@@ -622,7 +622,7 @@
 </table>
 <p>JDK1.7及以下版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:PermSize=32m -XX:MaxPermSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
 <p>JDK1.8及以上版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:MetaspaceSize=32m -XX:MaxMetaspaceSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>关键业务系统的JVM参数推荐(2016热冬版) <a href="http://calvin1978.blogcn.com/articles/jvmoption-2.html" target="_blank" rel="external">http://calvin1978.blogcn.com/articles/jvmoption-2.html</a><br>JVM调优总结 -Xms -Xmx -Xmn -Xss <a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="external">http://unixboy.iteye.com/blog/174173/</a><br>java高分局之JVM命令参数大全（高级垃圾回收选项）<a href="http://blog.csdn.net/maosijunzi/article/details/46562489" target="_blank" rel="external">http://blog.csdn.net/maosijunzi/article/details/46562489</a>  </p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><li>关键业务系统的JVM参数推荐(2016热冬版) <a href="http://calvin1978.blogcn.com/articles/jvmoption-2.html" target="_blank" rel="external">http://calvin1978.blogcn.com/articles/jvmoption-2.html</a></li><br><li>JVM调优总结 -Xms -Xmx -Xmn -Xss <a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="external">http://unixboy.iteye.com/blog/174173/</a></li><br><li>java高分局之JVM命令参数大全（高级垃圾回收选项）<a href="http://blog.csdn.net/maosijunzi/article/details/46562489" target="_blank" rel="external">http://blog.csdn.net/maosijunzi/article/details/46562489</a></li>
 
       
     </div>
@@ -837,7 +837,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java进程常用参数说明"><span class="nav-number">1.</span> <span class="nav-text">Java进程常用参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看JDK参数"><span class="nav-number">1.1.</span> <span class="nav-text">查看JDK参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存控制参数"><span class="nav-number">1.2.</span> <span class="nav-text">内存控制参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XX参数"><span class="nav-number">1.3.</span> <span class="nav-text">-XX参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看JDK参数"><span class="nav-number">1.</span> <span class="nav-text">查看JDK参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存控制参数"><span class="nav-number">2.</span> <span class="nav-text">内存控制参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XX参数"><span class="nav-number">3.</span> <span class="nav-text">-XX参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
