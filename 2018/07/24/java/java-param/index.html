@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="jvm," />
 
 
 
@@ -114,12 +114,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+<meta name="description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
+<meta name="keywords" content="jvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL索引原理">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/java/java-param/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
+<meta property="og:updated_time" content="2018-07-24T14:31:10.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
+<meta name="twitter:title" content="MySQL索引原理">
+<meta name="twitter:description" content="Java进程常用参数说明查看JDK参数查看并行收集线程/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/随笔/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/java/java-param/"/>
 
 
 
 
 
-  <title>分类: 随笔 | 个人博客</title>
+  <title>MySQL索引原理 | 个人博客</title>
   
 
 
@@ -179,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
     <a href="https://github.com/scjqwe"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
 
@@ -308,55 +313,386 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>随笔<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/java/java-param/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kumu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/07/16/My-first-post/" itemprop="url">
-              
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySQL索引原理</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-16T11:17:11+08:00"
-              content="2017-07-16" >
-          07-16
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T22:29:00+08:00">
+                2018-07-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  794
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Java进程常用参数说明"><a href="#Java进程常用参数说明" class="headerlink" title="Java进程常用参数说明"></a>Java进程常用参数说明</h3><h4 id="查看JDK参数"><a href="#查看JDK参数" class="headerlink" title="查看JDK参数"></a>查看JDK参数</h4><p>查看并行收集线程<br>/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads</p>
+<a id="more"></a> 
+<h4 id="内存控制参数"><a href="#内存控制参数" class="headerlink" title="内存控制参数"></a>内存控制参数</h4><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-Xms128m</td>
+<td>初始的内存</td>
+</tr>
+<tr>
+<td>-Xmx256m</td>
+<td>最大堆内存</td>
+</tr>
+<tr>
+<td>-Xmn128m</td>
+<td>设置新生代内存,和NewRatio有相同的作用,可以不用设置</td>
+</tr>
+<tr>
+<td>-Xss256k</td>
+<td>线程栈Stack Space,一般情况下可以给256k,实测最小228k,JDK默认给的是1MB的内存</td>
+</tr>
+<tr>
+<td></td>
+<td>如果多层递归发现StackOverFlow,可以适当调大,调小这个参数可以开启更多的线程</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="XX参数"><a href="#XX参数" class="headerlink" title="-XX参数"></a>-XX参数</h4><p>-XX后面有部分参数可以跟+或者-,+表示开启,-表示禁用<br>比如<br>-XX:+UseGCOverheadLimit,就表示GC时间过长抛OOM<br>-XX:-UseGCOverheadLimit,就表示GC时间过长不要抛OOM</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-XX:PermSize=64m</td>
+<td>初始的永久区大小,&lt;=JDK7可用</td>
+</tr>
+<tr>
+<td>-XX:MaxMaxPermSize=128m</td>
+<td>最大的永久区大小,&lt;=JDK7可用</td>
+</tr>
+<tr>
+<td>-XX:MetaspaceSize=64m</td>
+<td>初始的永久区大小,&gt;=JDK8可用</td>
+</tr>
+<tr>
+<td>-XX:MaxMetaspaceSize=256m</td>
+<td>最大的永久区大小,&gt;=JDK8可用</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:NewRatio=1</td>
+<td>新生代占1/2,默认情况,新生代占1/3,公式为1/(1+n)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:-UseBiasedLocking</td>
+<td>取消偏向锁,在synchronized上的 优化,取消对性能有提升</td>
+</tr>
+<tr>
+<td>-XX:AutoBoxCacheMax=20000</td>
+<td>Integer i = 3;这语句有着 int自动装箱成Integer的过程，JDK默认只缓存 -128 ~ +127的int 和 long</td>
+</tr>
+<tr>
+<td>-XX:+PerfDisablesharedMem</td>
+<td>禁止在/tmp/hperf[用户名] 路径上写入进程统计文件,jps,jstat,远程查看jvm状态也不能用了</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:-UseGCOverheadLimit</td>
+<td>限制GC的运行时间。如果GC耗时过长，就抛OOM</td>
+</tr>
+<tr>
+<td>-XX:-OmitStackTraceInFastThrow</td>
+<td>2W次异常后,不打印异常栈,建议禁用,不方便查问题</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+UseParNewGC</td>
+<td>新生代并行收集</td>
+</tr>
+<tr>
+<td>-XX:+UseConcMarkSweepGC</td>
+<td>老年代并发收集</td>
+</tr>
+<tr>
+<td>-XX:CMSInitiatingOccupancyFraction=75</td>
+<td>老年代收集的触发的比例</td>
+</tr>
+<tr>
+<td>-XX:+UseCMSInitiatingOccupancyOnly</td>
+<td>强制使用上面的触发比例</td>
+</tr>
+<tr>
+<td>-XX:MaxTenuringThreshold=2</td>
+<td>对象在Survivor区熬过多少次Young GC后晋升到年老代</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+HeapDumpOnOutOfMemoryError</td>
+<td>如果出现OutOfMemory,dump内存到文件中,默认情况下dump到当前用户目录</td>
+</tr>
+<tr>
+<td>-XX:HeapDumpPath=/home/checkin/dump</td>
+<td>指定dump的目录</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+ExplicitGCInvokesConcurrent</td>
+<td>显式的System.gc()的调用会使用CMS方式</td>
+</tr>
+<tr>
+<td>-XX:+DisableExplicitGC</td>
+<td>不允许显式调用System.gc(),此选项最好不要加,有些堆外内存分配依赖显式 gc 调用,关闭之后容易导致 OOM</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+PrintGCDetails</td>
+<td>打印GC详细情况</td>
+</tr>
+<tr>
+<td>-XX:+PrintGCDateStamps</td>
+<td>打印GC的时间戳</td>
+</tr>
+<tr>
+<td>-verbose:gc</td>
+<td>打印gc日志</td>
+</tr>
+<tr>
+<td>-Xloggc:gc.log</td>
+<td>日志存放在当前路径下,文件名为gc.log,可以使用相对路径和绝对路径</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>JDK1.7及以下版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:PermSize=32m -XX:MaxPermSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
+<p>JDK1.8及以上版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:MetaspaceSize=32m -XX:MaxMetaspaceSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>关键业务系统的JVM参数推荐(2016热冬版) <a href="http://calvin1978.blogcn.com/articles/jvmoption-2.html" target="_blank" rel="external">http://calvin1978.blogcn.com/articles/jvmoption-2.html</a><br>JVM调优总结 -Xms -Xmx -Xmn -Xss <a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="external">http://unixboy.iteye.com/blog/174173/</a><br>java高分局之JVM命令参数大全（高级垃圾回收选项）<a href="http://blog.csdn.net/maosijunzi/article/details/46562489" target="_blank" rel="external">http://blog.csdn.net/maosijunzi/article/details/46562489</a>  </p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------感谢您的阅读-------------</div>
+    
+</div>
 
       
     </div>
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/15/mysql/index/" rel="next" title="MySQL索引原理">
+                <i class="fa fa-chevron-left"></i> MySQL索引原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -364,6 +700,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -384,8 +724,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -478,6 +827,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java进程常用参数说明"><span class="nav-number">1.</span> <span class="nav-text">Java进程常用参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看JDK参数"><span class="nav-number">1.1.</span> <span class="nav-text">查看JDK参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存控制参数"><span class="nav-number">1.2.</span> <span class="nav-text">内存控制参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XX参数"><span class="nav-number">1.3.</span> <span class="nav-text">-XX参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -611,10 +976,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 

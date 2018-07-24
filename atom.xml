@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-15T16:29:51.611Z</updated>
+  <updated>2018-07-24T14:31:10.968Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,208 @@
   
   <entry>
     <title>MySQL索引原理</title>
+    <link href="http://yoursite.com/2018/07/24/java/java-param/"/>
+    <id>http://yoursite.com/2018/07/24/java/java-param/</id>
+    <published>2018-07-24T14:29:00.000Z</published>
+    <updated>2018-07-24T14:31:10.968Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Java进程常用参数说明"><a href="#Java进程常用参数说明" class="headerlink" title="Java进程常用参数说明"></a>Java进程常用参数说明</h3><h4 id="查看JDK参数"><a href="#查看JDK参数" class="headerlink" title="查看JDK参数"></a>查看JDK参数</h4><p>查看并行收集线程<br>/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads</p>
+<a id="more"></a> 
+<h4 id="内存控制参数"><a href="#内存控制参数" class="headerlink" title="内存控制参数"></a>内存控制参数</h4><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-Xms128m</td>
+<td>初始的内存</td>
+</tr>
+<tr>
+<td>-Xmx256m</td>
+<td>最大堆内存</td>
+</tr>
+<tr>
+<td>-Xmn128m</td>
+<td>设置新生代内存,和NewRatio有相同的作用,可以不用设置</td>
+</tr>
+<tr>
+<td>-Xss256k</td>
+<td>线程栈Stack Space,一般情况下可以给256k,实测最小228k,JDK默认给的是1MB的内存</td>
+</tr>
+<tr>
+<td></td>
+<td>如果多层递归发现StackOverFlow,可以适当调大,调小这个参数可以开启更多的线程</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="XX参数"><a href="#XX参数" class="headerlink" title="-XX参数"></a>-XX参数</h4><p>-XX后面有部分参数可以跟+或者-,+表示开启,-表示禁用<br>比如<br>-XX:+UseGCOverheadLimit,就表示GC时间过长抛OOM<br>-XX:-UseGCOverheadLimit,就表示GC时间过长不要抛OOM</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-XX:PermSize=64m</td>
+<td>初始的永久区大小,&lt;=JDK7可用</td>
+</tr>
+<tr>
+<td>-XX:MaxMaxPermSize=128m</td>
+<td>最大的永久区大小,&lt;=JDK7可用</td>
+</tr>
+<tr>
+<td>-XX:MetaspaceSize=64m</td>
+<td>初始的永久区大小,&gt;=JDK8可用</td>
+</tr>
+<tr>
+<td>-XX:MaxMetaspaceSize=256m</td>
+<td>最大的永久区大小,&gt;=JDK8可用</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:NewRatio=1</td>
+<td>新生代占1/2,默认情况,新生代占1/3,公式为1/(1+n)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:-UseBiasedLocking</td>
+<td>取消偏向锁,在synchronized上的 优化,取消对性能有提升</td>
+</tr>
+<tr>
+<td>-XX:AutoBoxCacheMax=20000</td>
+<td>Integer i = 3;这语句有着 int自动装箱成Integer的过程，JDK默认只缓存 -128 ~ +127的int 和 long</td>
+</tr>
+<tr>
+<td>-XX:+PerfDisablesharedMem</td>
+<td>禁止在/tmp/hperf[用户名] 路径上写入进程统计文件,jps,jstat,远程查看jvm状态也不能用了</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:-UseGCOverheadLimit</td>
+<td>限制GC的运行时间。如果GC耗时过长，就抛OOM</td>
+</tr>
+<tr>
+<td>-XX:-OmitStackTraceInFastThrow</td>
+<td>2W次异常后,不打印异常栈,建议禁用,不方便查问题</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+UseParNewGC</td>
+<td>新生代并行收集</td>
+</tr>
+<tr>
+<td>-XX:+UseConcMarkSweepGC</td>
+<td>老年代并发收集</td>
+</tr>
+<tr>
+<td>-XX:CMSInitiatingOccupancyFraction=75</td>
+<td>老年代收集的触发的比例</td>
+</tr>
+<tr>
+<td>-XX:+UseCMSInitiatingOccupancyOnly</td>
+<td>强制使用上面的触发比例</td>
+</tr>
+<tr>
+<td>-XX:MaxTenuringThreshold=2</td>
+<td>对象在Survivor区熬过多少次Young GC后晋升到年老代</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+HeapDumpOnOutOfMemoryError</td>
+<td>如果出现OutOfMemory,dump内存到文件中,默认情况下dump到当前用户目录</td>
+</tr>
+<tr>
+<td>-XX:HeapDumpPath=/home/checkin/dump</td>
+<td>指定dump的目录</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+ExplicitGCInvokesConcurrent</td>
+<td>显式的System.gc()的调用会使用CMS方式</td>
+</tr>
+<tr>
+<td>-XX:+DisableExplicitGC</td>
+<td>不允许显式调用System.gc(),此选项最好不要加,有些堆外内存分配依赖显式 gc 调用,关闭之后容易导致 OOM</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+PrintGCDetails</td>
+<td>打印GC详细情况</td>
+</tr>
+<tr>
+<td>-XX:+PrintGCDateStamps</td>
+<td>打印GC的时间戳</td>
+</tr>
+<tr>
+<td>-verbose:gc</td>
+<td>打印gc日志</td>
+</tr>
+<tr>
+<td>-Xloggc:gc.log</td>
+<td>日志存放在当前路径下,文件名为gc.log,可以使用相对路径和绝对路径</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>JDK1.7及以下版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:PermSize=32m -XX:MaxPermSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
+<p>JDK1.8及以上版本参数<br>-Xms128m -Xmx512m -Xss256k -server -XX:MetaspaceSize=32m -XX:MaxMetaspaceSize=256m -XX:NewRatio=1 -XX:-UseBiasedLocking -XX:AutoBoxCacheMax=20000 -XX:-UseGCOverheadLimit -XX:-OmitStackTraceInFastThrow -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=2 -XX:+HeapDumpOnOutOfMemoryError -XX:+ExplicitGCInvokesConcurrent -XX:+PrintGCDetails -XX:+PrintGCDateStamps -verbose:gc -Xloggc:gc.log  </p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>关键业务系统的JVM参数推荐(2016热冬版) <a href="http://calvin1978.blogcn.com/articles/jvmoption-2.html" target="_blank" rel="external">http://calvin1978.blogcn.com/articles/jvmoption-2.html</a><br>JVM调优总结 -Xms -Xmx -Xmn -Xss <a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="external">http://unixboy.iteye.com/blog/174173/</a><br>java高分局之JVM命令参数大全（高级垃圾回收选项）<a href="http://blog.csdn.net/maosijunzi/article/details/46562489" target="_blank" rel="external">http://blog.csdn.net/maosijunzi/article/details/46562489</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Java进程常用参数说明&quot;&gt;&lt;a href=&quot;#Java进程常用参数说明&quot; class=&quot;headerlink&quot; title=&quot;Java进程常用参数说明&quot;&gt;&lt;/a&gt;Java进程常用参数说明&lt;/h3&gt;&lt;h4 id=&quot;查看JDK参数&quot;&gt;&lt;a href=&quot;#查看JDK参数&quot; class=&quot;headerlink&quot; title=&quot;查看JDK参数&quot;&gt;&lt;/a&gt;查看JDK参数&lt;/h4&gt;&lt;p&gt;查看并行收集线程&lt;br&gt;/usr/jdk1.8.0_101/bin/java -server -Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC -XX:+PrintFlagsFinal -version| grep ParallelGCThreads&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="jvm" scheme="http://yoursite.com/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL索引原理</title>
     <link href="http://yoursite.com/2018/07/15/mysql/index/"/>
     <id>http://yoursite.com/2018/07/15/mysql/index/</id>
-    <published>2018-07-15T15:53:04.184Z</published>
-    <updated>2018-07-15T16:29:51.611Z</updated>
+    <published>2018-07-15T15:53:00.000Z</published>
+    <updated>2018-07-24T14:29:38.332Z</updated>
     
     <content type="html"><![CDATA[<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="二叉排序树（Binary-Sort-Tree）"><a href="#二叉排序树（Binary-Sort-Tree）" class="headerlink" title="二叉排序树（Binary Sort Tree）"></a>二叉排序树（Binary Sort Tree）</h4><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><ol>
 <li>若左子树不空，则左子树上所有节点的值均小于它的根节点的值</li>
