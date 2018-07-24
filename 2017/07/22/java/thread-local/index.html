@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="ThreadLocal," />
 
 
 
@@ -114,19 +114,17 @@
 
 
 
-<meta name="description" content="介绍git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。git是个工具，在linux里面也就类似gcc这样的工具一样，是一个shell命令。">
-<meta name="keywords" content="git">
+<meta name="description" content="ThreadLocal用法Java中线程的同步机制保证了多线程访问共享变量的安全性，通常我们使用synchronized关键字来实现。在多个线程对共享变量进行读写操作时，同步锁保证了同一时间只有一个线程对共享变量进行操作，概括地说，这是一种“以时间换空间”的解决策略。 在JDK1.2中引入了ThreadLocal类来提供了一种“以空间换时间”的同步解决策略。ThreadLocal内部维护了一份类似">
+<meta name="keywords" content="ThreadLocal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git知识">
-<meta property="og:url" content="http://yoursite.com/2018/03/18/git/index.html">
+<meta property="og:title" content="ThreadLocal">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/java/thread-local/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="介绍git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。git是个工具，在linux里面也就类似gcc这样的工具一样，是一个shell命令。">
-<meta property="og:image" content="http://yoursite.com/images/git/git.jpg">
-<meta property="og:updated_time" content="2018-03-19T16:27:44.034Z">
+<meta property="og:description" content="ThreadLocal用法Java中线程的同步机制保证了多线程访问共享变量的安全性，通常我们使用synchronized关键字来实现。在多个线程对共享变量进行读写操作时，同步锁保证了同一时间只有一个线程对共享变量进行操作，概括地说，这是一种“以时间换空间”的解决策略。 在JDK1.2中引入了ThreadLocal类来提供了一种“以空间换时间”的同步解决策略。ThreadLocal内部维护了一份类似">
+<meta property="og:updated_time" content="2018-07-24T15:00:22.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git知识">
-<meta name="twitter:description" content="介绍git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。git是个工具，在linux里面也就类似gcc这样的工具一样，是一个shell命令。">
-<meta name="twitter:image" content="http://yoursite.com/images/git/git.jpg">
+<meta name="twitter:title" content="ThreadLocal">
+<meta name="twitter:description" content="ThreadLocal用法Java中线程的同步机制保证了多线程访问共享变量的安全性，通常我们使用synchronized关键字来实现。在多个线程对共享变量进行读写操作时，同步锁保证了同一时间只有一个线程对共享变量进行操作，概括地说，这是一种“以时间换空间”的解决策略。 在JDK1.2中引入了ThreadLocal类来提供了一种“以空间换时间”的同步解决策略。ThreadLocal内部维护了一份类似">
 
 
 
@@ -155,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/18/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/22/java/thread-local/"/>
 
 
 
 
 
-  <title>Git知识 | 个人博客</title>
+  <title>ThreadLocal | 个人博客</title>
   
 
 
@@ -329,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/18/git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/java/thread-local/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kumu">
@@ -346,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git知识</h1>
+          <h1 class="post-title" itemprop="name headline">ThreadLocal</h1>
         
 
         <div class="post-meta">
@@ -358,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T23:21:00+08:00">
-                2018-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T18:54:25+08:00">
+                2017-07-22
               </time>
             
 
@@ -381,8 +379,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -412,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,788
+                  880
                 </span>
               
 
@@ -428,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7
+                  5
                 </span>
               
             </div>
@@ -449,82 +447,13 @@
       
 
       
-        <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>git是一个开源的<strong>分布式版本控制系统</strong>，用以有效、高速的处理从很小到非常大的项目版本管理。<strong>git是个工具</strong>，在linux里面也就类似gcc这样的工具一样，是一个shell命令。</p>
-<a id="more"></a>
-<h4 id="Git与GitHub区别"><a href="#Git与GitHub区别" class="headerlink" title="Git与GitHub区别"></a>Git与GitHub区别</h4><li>Git是版本控制工具</li><br><li>Github是一个平台，提供给用户创建git仓储空间，保存（托管）用户的一些数据文档或者代码等。</li>
-
-<h4 id="Git与CVS、SVN的区别"><a href="#Git与CVS、SVN的区别" class="headerlink" title="Git与CVS、SVN的区别"></a>Git与CVS、SVN的区别</h4><li>Git是分布式版本控制系统，代码提交是在本地的（如此速度就快），当然生成补丁（patch）然后push到远程服务器上是需要联网的</li><br><li>CVS、SVN是集中式版本控制系统，代码提交都是提交到远程服务器上</li><br><li>CVS、SVN这样的集中式版本控制系统，它的完整代码仓库（代码仓库不仅仅只包含了代码，还包含各个历史版本的信息等）在中心服务器上，一旦这个中心服务器挂了，也就是完整的代码仓库挂了</li><br><li>Git没有中心服务器的概念，每一个git客户端（git节点）都含有一个完整的代码仓库（前提是你之前从远程git仓库fetch过代码）</li>
-
-<h4 id="远程仓库、工作区、版本库和暂存区"><a href="#远程仓库、工作区、版本库和暂存区" class="headerlink" title="远程仓库、工作区、版本库和暂存区"></a>远程仓库、工作区、版本库和暂存区</h4><p><img src="/images/git/git.jpg" alt=""></p>
-<h5 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h5><p>就是在github或者在gitlab上的代码。可以用<strong>git pull</strong>和<strong>git push</strong>来进行本地仓库和远程仓库的同步操作</p>
-<h5 id="工作区（Working-Directory）"><a href="#工作区（Working-Directory）" class="headerlink" title="工作区（Working Directory）"></a>工作区（Working Directory）</h5><p>从项目中取出某个版本的所有文件和目录，用以开始后续工作的叫做工作目录，也就是工作区</p>
-<h5 id="版本库（Repository）"><a href="#版本库（Repository）" class="headerlink" title="版本库（Repository）"></a>版本库（Repository）</h5><p>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
-<li>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的<strong>暂存区</strong>，还有Git为我们自动创建的第一个分支<strong>master</strong>，以及指向master的一个指针叫<strong>HEAD</strong>。</li>
-
-<h5 id="暂存区（Stage）"><a href="#暂存区（Stage）" class="headerlink" title="暂存区（Stage）"></a>暂存区（Stage）</h5><p>暂存区就是版本库中的一个区域，具体参见上面的结构图</p>
-<h5 id="工作区、版本库、暂存区之间的关系"><a href="#工作区、版本库、暂存区之间的关系" class="headerlink" title="工作区、版本库、暂存区之间的关系"></a>工作区、版本库、暂存区之间的关系</h5><li>使用<strong>git add</strong>把文件从工作区添加到版本库中的暂存区，git add命令可以多次用，或者使用git add file1 file2 …</li><br><li>使用<strong>git commit</strong>提交代码，就是把暂存区的所有内容提交到当前分支</li><br><li>需要提交的文件修改通通放到暂存区（可能有多次的git add），然后，一次性提交暂存区的所有修改到当前分支（git commit）</li>
-
-<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><p>前提条件：已经执行git commit命令了，但是没有push到远程仓库，用以下命令可以回退<br><br>其实这个回退就是将本地的HEAD指针移动到某个版本上而已，所以这个操作是非常快的。</p>
-<h5 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h5><li>在Git中，用<strong>HEAD</strong>表示当前版本，也就是最新的提交3628164…882e1e0，上一个版本就是<strong>HEAD^</strong>，上上一个版本就是<strong>HEAD^^</strong>，当然往上100个版本写100个^比较容易数不过来，所以写成<strong>HEAD~100</strong></li><br><li>版本号没必要写全，前几位就可以了，Git会自动去找。当然也不能只写前一两位，因为Git可能会找到多个版本号，就无法确定是哪一个了</li>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></div><div class="line"><span class="keyword">HEAD</span> <span class="keyword">is</span> <span class="keyword">now</span> <span class="keyword">at</span> ea34578 <span class="keyword">add</span> <span class="keyword">distributed</span></div></pre></td></tr></table></figure>
-<h5 id="回退到未来的某个版本"><a href="#回退到未来的某个版本" class="headerlink" title="回退到未来的某个版本"></a>回退到未来的某个版本</h5><li>使用<strong>git log</strong>命令查看提交记录，找到需要回退版本的<strong>commit id</strong></li><br><li>如果在回退以后又想再次回到之前的版本，<strong>git reflog</strong> 可以查看所有分支的所有操作记录（包括commit和reset的操作），包括已经被删除的commit记录</li>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard 3628164</span></div><div class="line"><span class="keyword">HEAD</span> <span class="keyword">is</span> <span class="keyword">now</span> <span class="keyword">at</span> <span class="number">3628164</span> append GPL</div></pre></td></tr></table></figure>
-<blockquote>
-<p>git log则不能查看已经删除了的commit记录</p>
-</blockquote>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><li>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id</li><br><li>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本</li><br><li>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本</li>
-
-<blockquote>
-<p><strong>git reset –-soft</strong>：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可<br><strong>git reset -–hard</strong>：彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的commit中所包含的更改被冲掉</p>
-</blockquote>
-<h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><h5 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h5><li>命令git checkout – file意思就是，把file文件在工作区的修改全部撤销，这里有两种情况：</li><br><li>一种是file自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li><br><li>一种是file已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li><br><li>总之，就是让这个文件回到最近一次git commit或git add时的状态。</li>
-
-<h5 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h5><li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file</li><br><li>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作</li><br><li>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，版本回退一节，不过前提是没有推送到远程库</li>
-
-<h4 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h4><p>场景:当你接到一个修复一个代号101的bug的任务时，你想创建一个分支issue-101来修复它，但是，当前正在dev上进行的工作还没有提交，Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作</p>
-<h5 id="git-stash-list"><a href="#git-stash-list" class="headerlink" title="git stash list"></a>git stash list</h5><p>查看暂存区的所有暂存修改记录</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git stash <span class="keyword">list</span></div><div class="line">stash@&#123;<span class="number">0</span>&#125;: WIP <span class="keyword">on</span> de<span class="variable">v:</span> <span class="number">6224937</span> <span class="built_in">add</span> merge</div></pre></td></tr></table></figure>
-<h5 id="git-stash-apply-stash-X"><a href="#git-stash-apply-stash-X" class="headerlink" title="git stash apply stash@{X}"></a>git stash apply stash@{X}</h5><p>取出相应的暂存</p>
-<h5 id="git-stash-drop-stash-X"><a href="#git-stash-drop-stash-X" class="headerlink" title="git stash drop stash@{X}"></a>git stash drop stash@{X}</h5><p>将记录列表中取出的对应暂存记录删除</p>
-<h5 id="git-stash-pop-推荐"><a href="#git-stash-pop-推荐" class="headerlink" title="git stash pop(推荐)"></a>git stash pop(推荐)</h5><p>取出最近一次暂存并删除记录列表中对应记录</p>
-<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>git branch</td>
-<td>查看分支</td>
-</tr>
-<tr>
-<td>git branch <name></name></td>
-<td>创建分支</td>
-</tr>
-<tr>
-<td>git checkout <name></name></td>
-<td>切换分支</td>
-</tr>
-<tr>
-<td>git checkout -b <name></name></td>
-<td>创建+切换分支</td>
-</tr>
-<tr>
-<td>git merge <name></name></td>
-<td>合并某分支到当前分支</td>
-</tr>
-<tr>
-<td>git branch -d <name></name></td>
-<td>删除分支</td>
-</tr>
-</tbody>
-</table>
-<h5 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h5><p>在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。</p>
-<h5 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h5><p>添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</p>
+        <h3 id="ThreadLocal用法"><a href="#ThreadLocal用法" class="headerlink" title="ThreadLocal用法"></a>ThreadLocal用法</h3><p>Java中线程的同步机制保证了多线程访问共享变量的安全性，通常我们使用synchronized关键字来实现。在多个线程对共享变量进行读写操作时，同步锁保证了同一时间只有一个线程对共享变量进行操作，概括地说，这是一种“以时间换空间”的解决策略。</p>
+<p>在JDK1.2中引入了ThreadLocal类来提供了一种“以空间换时间”的同步解决策略。ThreadLocal内部维护了一份类似Map的静态变量ThreadLocalMap，其中key为当前线程，value为共享变量。JDK1.5引入泛型，ThreadLocal也同时支持泛型。<br><a id="more"></a><br>其具体实现如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocal</span>&lt;T&gt; &#123;</span></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * ThreadLocals rely on per-thread hash maps attached to each thread</div><div class="line">   * (Thread.threadLocals and inheritableThreadLocals).  The ThreadLocal</div><div class="line">   * objects act as keys, searched via threadLocalHashCode.  This is a</div><div class="line">   * custom hash code (useful only within ThreadLocalMaps) that eliminates</div><div class="line">   * collisions in the common case where consecutively constructed</div><div class="line">   * ThreadLocals are used by the same threads, while remaining well-behaved</div><div class="line">   * in less common cases.</div><div class="line">   */</div><div class="line">  <span class="keyword">private</span> final <span class="keyword">int</span> threadLocalHashCode = nextHashCode();</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * The next hash code to be given out. Accessed only by like-named method.</div><div class="line">   */</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> nextHashCode = <span class="number">0</span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * The difference between successively generated hash codes - turns</div><div class="line">   * implicit sequential thread-local IDs into near-optimally spread</div><div class="line">   * multiplicative hash values for power-of-two-sized tables.</div><div class="line">   */</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> final <span class="keyword">int</span> HASH_INCREMENT = <span class="number">0x61c88647</span>;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Compute the next hash code. The static synchronization used here</div><div class="line">   * should not be a performance bottleneck. When ThreadLocals are</div><div class="line">   * generated in different threads at a fast enough rate to regularly</div><div class="line">   * contend on this lock, memory contention is by far a more serious</div><div class="line">   * problem than lock contention.</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> synchronized <span class="keyword">int</span> <span class="title">nextHashCode</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">int</span> h = nextHashCode;</div><div class="line">      nextHashCode = h + HASH_INCREMENT;</div><div class="line">      <span class="keyword">return</span> h;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Creates a thread local variable.</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ThreadLocal</span><span class="params">()</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Returns the value in the current thread's copy of this thread-local</div><div class="line">   * variable.  Creates and initializes the copy if this is the first time</div><div class="line">   * the thread has called this method.</div><div class="line">   *</div><div class="line">   * @return the current thread's value of this thread-local</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">      Thread t = Thread.currentThread();</div><div class="line">      ThreadLocalMap <span class="built_in">map</span> = getMap(t);</div><div class="line">      <span class="keyword">if</span> (<span class="built_in">map</span> != null)</div><div class="line">          <span class="keyword">return</span> (T)<span class="built_in">map</span>.get(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">      <span class="comment">// Maps are constructed lazily.  if the map for this thread</span></div><div class="line">      <span class="comment">// doesn't exist, create it, with this ThreadLocal and its</span></div><div class="line">      <span class="comment">// initial value as its only entry.</span></div><div class="line">      T value = initialValue();</div><div class="line">      createMap(t, value);</div><div class="line">      <span class="keyword">return</span> value;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Sets the current thread's copy of this thread-local variable</div><div class="line">   * to the specified value.  Many applications will have no need for</div><div class="line">   * this functionality, relying solely on the &#123;@link #initialValue&#125;</div><div class="line">   * method to set the values of thread-locals.</div><div class="line">   *</div><div class="line">   * @param value the value to be stored in the current threads' copy of</div><div class="line">   *        this thread-local.</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T value)</span> </span>&#123;</div><div class="line">      Thread t = Thread.currentThread();</div><div class="line">      ThreadLocalMap <span class="built_in">map</span> = getMap(t);</div><div class="line">      <span class="keyword">if</span> (<span class="built_in">map</span> != null)</div><div class="line">          <span class="built_in">map</span>.<span class="built_in">set</span>(<span class="keyword">this</span>, value);</div><div class="line">      <span class="keyword">else</span></div><div class="line">          createMap(t, value);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Get the map associated with a ThreadLocal. Overridden in</div><div class="line">   * InheritableThreadLocal.</div><div class="line">   *</div><div class="line">   * @param  t the current thread</div><div class="line">   * @return the map</div><div class="line">   */</div><div class="line">  <span class="function">ThreadLocalMap <span class="title">getMap</span><span class="params">(Thread t)</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> t.threadLocals;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * Create the map associated with a ThreadLocal. Overridden in</div><div class="line">   * InheritableThreadLocal.</div><div class="line">   *</div><div class="line">   * @param t the current thread</div><div class="line">   * @param firstValue value for the initial entry of the map</div><div class="line">   * @param map the map to store.</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">createMap</span><span class="params">(Thread t, T firstValue)</span> </span>&#123;</div><div class="line">      t.threadLocals = <span class="keyword">new</span> ThreadLocalMap(<span class="keyword">this</span>, firstValue);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .......</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line">   * ThreadLocalMap is a customized hash map suitable only for</div><div class="line">   * maintaining thread local values. No operations are exported</div><div class="line">   * outside of the ThreadLocal class. The class is package private to</div><div class="line">   * allow declaration of fields in class Thread.  To help deal with</div><div class="line">   * very large and long-lived usages, the hash table entries use</div><div class="line">   * WeakReferences for keys. However, since reference queues are not</div><div class="line">   * used, stale entries are guaranteed to be removed only when</div><div class="line">   * the table starts running out of space.</div><div class="line">   */</div><div class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalMap</span> &#123;</span></div><div class="line"></div><div class="line">  ........</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从中很清晰的可以看出，多个线程拥有自己一份单独的ThreadLocalMap，共享变量对于每个线程都是单独的一份，因此不会造成线程的安全问题。</p>
+<p>JDBC的ConnectionManager类就是以这种方式来实现数据库连接Connection对象线程隔离。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">import java.sql.Connection;</div><div class="line">import java.sql.DriverManager;</div><div class="line">import java.sql.SQLException;</div><div class="line"></div><div class="line">public class ConnectionManager &#123;</div><div class="line"></div><div class="line">	private static ThreadLocal&lt;Connection&gt; connectionHolder = new ThreadLocal&lt;Connection&gt;() &#123;</div><div class="line">		@Override</div><div class="line">		protected<span class="built_in"> Connection </span>initialValue() &#123;</div><div class="line">		<span class="built_in">	Connection </span>conn = <span class="literal">null</span>;</div><div class="line">			try &#123;</div><div class="line">				conn = DriverManager.getConnection(</div><div class="line">						<span class="string">"jdbc:mysql://localhost:3306/test"</span>, <span class="string">"username"</span>,</div><div class="line">						<span class="string">"password"</span>);</div><div class="line">			&#125; catch (SQLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">			return conn;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	public static<span class="built_in"> Connection </span>getConnection() &#123;</div><div class="line">		return connectionHolder.<span class="builtin-name">get</span>();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void setConnection(Connection conn) &#123;</div><div class="line">		connectionHolder.<span class="builtin-name">set</span>(conn);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是，有些情况ThreadLocal可能并不适用，例如存储大量数据的共享变量，或共享变量只能被创建一次时，就只能通过synchronized来实现了。</p>
+<p><a href="https://my.oschina.net/lichhao/blog/111362" target="_blank" rel="external">推荐阅读</a></p>
 
       
     </div>
@@ -553,7 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+            <a href="/tags/ThreadLocal/" rel="tag"><i class="fa fa-tag"></i> ThreadLocal</a>
           
         </div>
       
@@ -566,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/15/redis/redis/" rel="next" title="Redis高级知识">
-                <i class="fa fa-chevron-left"></i> Redis高级知识
+              <a href="/2017/07/22/spring/spring-boot/spring-introduction/" rel="next" title="Spring-cloud入门介绍">
+                <i class="fa fa-chevron-left"></i> Spring-cloud入门介绍
               </a>
             
           </div>
@@ -576,8 +505,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/28/kafka/springboot-kafka/" rel="prev" title="spring-boot整合kafka">
-                spring-boot整合kafka <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/01/spring/spring-shiro/" rel="prev" title="Spring-Shiro介绍及其使用">
+                Spring-Shiro介绍及其使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -743,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git与GitHub区别"><span class="nav-number">2.</span> <span class="nav-text">Git与GitHub区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git与CVS、SVN的区别"><span class="nav-number">3.</span> <span class="nav-text">Git与CVS、SVN的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程仓库、工作区、版本库和暂存区"><span class="nav-number">4.</span> <span class="nav-text">远程仓库、工作区、版本库和暂存区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#远程仓库"><span class="nav-number">4.1.</span> <span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作区（Working-Directory）"><span class="nav-number">4.2.</span> <span class="nav-text">工作区（Working Directory）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#版本库（Repository）"><span class="nav-number">4.3.</span> <span class="nav-text">版本库（Repository）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#暂存区（Stage）"><span class="nav-number">4.4.</span> <span class="nav-text">暂存区（Stage）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作区、版本库、暂存区之间的关系"><span class="nav-number">4.5.</span> <span class="nav-text">工作区、版本库、暂存区之间的关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">5.</span> <span class="nav-text">版本回退</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#回退到上一个版本"><span class="nav-number">5.1.</span> <span class="nav-text">回退到上一个版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回退到未来的某个版本"><span class="nav-number">5.2.</span> <span class="nav-text">回退到未来的某个版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">5.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">6.</span> <span class="nav-text">撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#含义"><span class="nav-number">6.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#场景"><span class="nav-number">6.2.</span> <span class="nav-text">场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-stash"><span class="nav-number">7.</span> <span class="nav-text">git stash</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-stash-list"><span class="nav-number">7.1.</span> <span class="nav-text">git stash list</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-stash-apply-stash-X"><span class="nav-number">7.2.</span> <span class="nav-text">git stash apply stash@{X}</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-stash-drop-stash-X"><span class="nav-number">7.3.</span> <span class="nav-text">git stash drop stash@{X}</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-stash-pop-推荐"><span class="nav-number">7.4.</span> <span class="nav-text">git stash pop(推荐)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支管理"><span class="nav-number">8.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Bug分支"><span class="nav-number">8.1.</span> <span class="nav-text">Bug分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Feature分支"><span class="nav-number">8.2.</span> <span class="nav-text">Feature分支</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadLocal用法"><span class="nav-number">1.</span> <span class="nav-text">ThreadLocal用法</span></a></li></ol></div>
             
 
           </div>
