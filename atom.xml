@@ -773,174 +773,6 @@
   </entry>
   
   <entry>
-    <title>Kaptcha验证码介绍</title>
-    <link href="http://yoursite.com/2018/03/15/captcha/kaptcha/"/>
-    <id>http://yoursite.com/2018/03/15/captcha/kaptcha/</id>
-    <published>2018-03-15T15:00:00.000Z</published>
-    <updated>2018-04-18T16:52:50.296Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="kaptcha"><a href="#kaptcha" class="headerlink" title="kaptcha"></a>kaptcha</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>kaptcha 是一个很有用的验证码生成工具。有了它，你能够生成各种样式的验证码，由于它是可配置的。<br><br>kaptcha工作的原理是调用com.google.code.kaptcha.servlet.KaptchaServlet，生成一个图片。<br><br>同一时候将生成的验证码字符串放到 HttpSession中。</p>
-<a id="more"></a>
-<h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>描述</th>
-<th>可选值</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>kaptcha.border</td>
-<td>图片边框</td>
-<td>yes,no</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>kaptcha.border.color</td>
-<td>边框颜色</td>
-<td>r,g,b(and optional alpha) 或者 white,black,blue</td>
-<td>black</td>
-</tr>
-<tr>
-<td>kaptcha.border.thickness</td>
-<td>边框厚度</td>
-<td>&gt;0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>kaptcha.image.width</td>
-<td>图片宽</td>
-<td>&gt;0</td>
-<td>200</td>
-</tr>
-<tr>
-<td>kaptcha.image.height</td>
-<td>图片高</td>
-<td>&gt;0</td>
-<td>50</td>
-</tr>
-<tr>
-<td>kaptcha.producer.impl</td>
-<td>图片实现类</td>
-<td></td>
-<td>com.google.code.kaptcha.impl.DefaultKaptcha</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.impl</td>
-<td>文本实现类</td>
-<td></td>
-<td>com.google.code.kaptcha.text.impl.DefaultTextCreator</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.string</td>
-<td>文本集合</td>
-<td></td>
-<td>abcde2345678gfynmnpwx</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.length</td>
-<td>验证码长度</td>
-<td></td>
-<td>5</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.names</td>
-<td>字体</td>
-<td></td>
-<td>Arial, Courier</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.size</td>
-<td>字体大小</td>
-<td></td>
-<td>40px</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.font.color</td>
-<td>字体颜色</td>
-<td>r,g,b  或者 white,black,blue</td>
-<td>black</td>
-</tr>
-<tr>
-<td>kaptcha.textproducer.char.space</td>
-<td>文字间隔</td>
-<td></td>
-<td>2</td>
-</tr>
-<tr>
-<td>kaptcha.noise.impl</td>
-<td>干扰实现类</td>
-<td></td>
-<td>com.google.code.kaptcha.impl.DefaultNoise</td>
-</tr>
-<tr>
-<td>kaptcha.noise.color</td>
-<td>干扰颜色</td>
-<td>r,g,b 或者 white,black,blue</td>
-<td>black</td>
-</tr>
-<tr>
-<td>kaptcha.obscurificator.impl</td>
-<td>图片样式</td>
-<td>水纹com.google.code.kaptcha.impl.WaterRipple<br>鱼眼com.google.code.kaptcha.impl.FishEyeGimpy<br>阴影com.google.code.kaptcha.impl.ShadowGimpy</td>
-<td>com.google.code.kaptcha.impl.WaterRipple</td>
-</tr>
-<tr>
-<td>kaptcha.background.impl</td>
-<td>背景实现类</td>
-<td></td>
-<td>com.google.code.kaptcha.impl.DefaultBackground</td>
-</tr>
-<tr>
-<td>kaptcha.background.clear.from</td>
-<td>背景颜色渐变，开始颜色</td>
-<td></td>
-<td>lightGray</td>
-</tr>
-<tr>
-<td>kaptcha.background.clear.to</td>
-<td>背景颜色渐变，结束颜色</td>
-<td></td>
-<td>white</td>
-</tr>
-<tr>
-<td>kaptcha.word.impl</td>
-<td>文字渲染器</td>
-<td></td>
-<td>com.google.code.kaptcha.text.impl.DefaultWordRenderer</td>
-</tr>
-<tr>
-<td>kaptcha.session.key</td>
-<td>session key</td>
-<td></td>
-<td>KAPTCHA_SESSION_KEY</td>
-</tr>
-<tr>
-<td>kaptcha.session.date</td>
-<td>session date</td>
-<td></td>
-<td>KAPTCHA_SESSION_DATE</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;kaptcha&quot;&gt;&lt;a href=&quot;#kaptcha&quot; class=&quot;headerlink&quot; title=&quot;kaptcha&quot;&gt;&lt;/a&gt;kaptcha&lt;/h2&gt;&lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;kaptcha 是一个很有用的验证码生成工具。有了它，你能够生成各种样式的验证码，由于它是可配置的。&lt;br&gt;&lt;br&gt;kaptcha工作的原理是调用com.google.code.kaptcha.servlet.KaptchaServlet，生成一个图片。&lt;br&gt;&lt;br&gt;同一时候将生成的验证码字符串放到 HttpSession中。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="captcha" scheme="http://yoursite.com/categories/captcha/"/>
-    
-    
-      <category term="kaptcha" scheme="http://yoursite.com/tags/kaptcha/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Jcaptcha验证码介绍</title>
     <link href="http://yoursite.com/2018/03/15/captcha/jcaptcha/"/>
     <id>http://yoursite.com/2018/03/15/captcha/jcaptcha/</id>
@@ -1176,6 +1008,174 @@
     
     
       <category term="jcaptcha" scheme="http://yoursite.com/tags/jcaptcha/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kaptcha验证码介绍</title>
+    <link href="http://yoursite.com/2018/03/15/captcha/kaptcha/"/>
+    <id>http://yoursite.com/2018/03/15/captcha/kaptcha/</id>
+    <published>2018-03-15T15:00:00.000Z</published>
+    <updated>2018-04-18T16:52:50.296Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="kaptcha"><a href="#kaptcha" class="headerlink" title="kaptcha"></a>kaptcha</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>kaptcha 是一个很有用的验证码生成工具。有了它，你能够生成各种样式的验证码，由于它是可配置的。<br><br>kaptcha工作的原理是调用com.google.code.kaptcha.servlet.KaptchaServlet，生成一个图片。<br><br>同一时候将生成的验证码字符串放到 HttpSession中。</p>
+<a id="more"></a>
+<h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>描述</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kaptcha.border</td>
+<td>图片边框</td>
+<td>yes,no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>kaptcha.border.color</td>
+<td>边框颜色</td>
+<td>r,g,b(and optional alpha) 或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.border.thickness</td>
+<td>边框厚度</td>
+<td>&gt;0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>kaptcha.image.width</td>
+<td>图片宽</td>
+<td>&gt;0</td>
+<td>200</td>
+</tr>
+<tr>
+<td>kaptcha.image.height</td>
+<td>图片高</td>
+<td>&gt;0</td>
+<td>50</td>
+</tr>
+<tr>
+<td>kaptcha.producer.impl</td>
+<td>图片实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultKaptcha</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.impl</td>
+<td>文本实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.text.impl.DefaultTextCreator</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.string</td>
+<td>文本集合</td>
+<td></td>
+<td>abcde2345678gfynmnpwx</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.length</td>
+<td>验证码长度</td>
+<td></td>
+<td>5</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.names</td>
+<td>字体</td>
+<td></td>
+<td>Arial, Courier</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.size</td>
+<td>字体大小</td>
+<td></td>
+<td>40px</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.font.color</td>
+<td>字体颜色</td>
+<td>r,g,b  或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.textproducer.char.space</td>
+<td>文字间隔</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>kaptcha.noise.impl</td>
+<td>干扰实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultNoise</td>
+</tr>
+<tr>
+<td>kaptcha.noise.color</td>
+<td>干扰颜色</td>
+<td>r,g,b 或者 white,black,blue</td>
+<td>black</td>
+</tr>
+<tr>
+<td>kaptcha.obscurificator.impl</td>
+<td>图片样式</td>
+<td>水纹com.google.code.kaptcha.impl.WaterRipple<br>鱼眼com.google.code.kaptcha.impl.FishEyeGimpy<br>阴影com.google.code.kaptcha.impl.ShadowGimpy</td>
+<td>com.google.code.kaptcha.impl.WaterRipple</td>
+</tr>
+<tr>
+<td>kaptcha.background.impl</td>
+<td>背景实现类</td>
+<td></td>
+<td>com.google.code.kaptcha.impl.DefaultBackground</td>
+</tr>
+<tr>
+<td>kaptcha.background.clear.from</td>
+<td>背景颜色渐变，开始颜色</td>
+<td></td>
+<td>lightGray</td>
+</tr>
+<tr>
+<td>kaptcha.background.clear.to</td>
+<td>背景颜色渐变，结束颜色</td>
+<td></td>
+<td>white</td>
+</tr>
+<tr>
+<td>kaptcha.word.impl</td>
+<td>文字渲染器</td>
+<td></td>
+<td>com.google.code.kaptcha.text.impl.DefaultWordRenderer</td>
+</tr>
+<tr>
+<td>kaptcha.session.key</td>
+<td>session key</td>
+<td></td>
+<td>KAPTCHA_SESSION_KEY</td>
+</tr>
+<tr>
+<td>kaptcha.session.date</td>
+<td>session date</td>
+<td></td>
+<td>KAPTCHA_SESSION_DATE</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;kaptcha&quot;&gt;&lt;a href=&quot;#kaptcha&quot; class=&quot;headerlink&quot; title=&quot;kaptcha&quot;&gt;&lt;/a&gt;kaptcha&lt;/h2&gt;&lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;kaptcha 是一个很有用的验证码生成工具。有了它，你能够生成各种样式的验证码，由于它是可配置的。&lt;br&gt;&lt;br&gt;kaptcha工作的原理是调用com.google.code.kaptcha.servlet.KaptchaServlet，生成一个图片。&lt;br&gt;&lt;br&gt;同一时候将生成的验证码字符串放到 HttpSession中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="captcha" scheme="http://yoursite.com/categories/captcha/"/>
+    
+    
+      <category term="kaptcha" scheme="http://yoursite.com/tags/kaptcha/"/>
     
   </entry>
   
