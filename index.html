@@ -634,11 +634,6 @@
 <li>它的左、右子树也分别为二叉排序树（递归定义）</li>
 </ol>
 <h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>二叉查找树查找比较方便，因为每次经过一次节点时，最多减少一半的可能。极端情况下，会出现所有节点位于同一侧的情况，直观上看就是一条直线，这种情况的查询效率比较低。因此需要对二叉树左右子树的高度作平衡化处理，这就是平衡二叉树。</p>
-<h4 id="平衡二叉树（Balance-Binary-Tree）"><a href="#平衡二叉树（Balance-Binary-Tree）" class="headerlink" title="平衡二叉树（Balance Binary Tree）"></a>平衡二叉树（Balance Binary Tree）</h4><h5 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h5><ol>
-<li>左右子树的高度差的绝对值不超过1</li>
-<li>左右子树都是平衡二叉树（递归定义）</li>
-</ol>
-<h5 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h5><p>常见的实现方式为：红黑树，平衡二叉查找树（AVL）,替罪羊树，树堆（Treap），伸展树。在这样的平衡树中进行查找，总共比较节点的次数不超过树的高度，查询效率得到提高，时间复杂度为O(logn)。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/15/mysql/index/#more" rel="contents">
